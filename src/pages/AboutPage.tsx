@@ -30,8 +30,8 @@ export function AboutPage() {
             </p>
           </div>
           <img
-            src="https://images.pexels.com/photos/6234526/pexels-photo-6234526.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt="Veterinarian with pet"
+            src="/1.jpg"
+            alt="V-Care Pet Polyclinic clinic interior with veterinarian and pets"
             className="rounded-xl shadow-lg"
           />
         </div>
