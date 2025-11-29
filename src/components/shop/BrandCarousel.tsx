@@ -25,42 +25,32 @@ const petBrands = [
   {
     id: 5,
     name: "Sheba",
-    logo: "https://1000logos.net/wp-content/uploads/2023/02/Sheba-Logo-500x281.png"
+    logo: "https://logos-world.net/wp-content/uploads/2023/02/Sheba-Logo.png"
   },
   {
     id: 6,
     name: "IAMS",
-    logo: "https://www.freepnglogos.com/uploads/iams-logo-png-1.png"
+    logo: "https://1000logos.net/wp-content/uploads/2020/09/IAMS-Logo.png"
   },
   {
     id: 7,
     name: "Drools",
-    logo: "https://www.droolsindia.com/cdn/shop/files/drools_india_logo.png"
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7fZJxQxHBxLqZ8kQY7jP4fR5eJ_xQ8FqXhg&s"
   },
   {
     id: 8,
     name: "Hill's Science Diet",
-    logo: "https://1000logos.net/wp-content/uploads/2023/08/Hills-Science-Diet-Logo-500x281.png"
+    logo: "https://1000logos.net/wp-content/uploads/2023/08/Hills-Science-Diet-Logo.png"
   },
   {
     id: 9,
     name: "Choostix",
-    logo: "https://choostix.in/wp-content/uploads/2021/06/logo.png"
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKvY7LZN7XqXZqxwJP0wYYJlH9uA1qQMXQbQ&s"
   },
   {
     id: 10,
-    name: "Pedigree Dentastix",
-    logo: "https://www.pedigree.com/sites/g/files/fnmzdf1736/files/2023-08/Dentastix-Logo.svg"
-  },
-  {
-    id: 11,
-    name: "Cesar",
-    logo: "https://www.cesar.com/themes/custom/cesar_bootstrap/images/logo.svg"
-  },
-  {
-    id: 12,
-    name: "Nutro",
-    logo: "https://www.nutro.com/themes/custom/nutro_bootstrap/images/logo.svg"
+    name: "Farmina",
+    logo: "https://www.farmina.com/wp-content/uploads/2021/03/farmina-logo.png"
   }
 ];
 
@@ -111,32 +101,40 @@ export function BrandCarousel() {
               {petBrands.map((brand) => (
                 <div
                   key={brand.id}
-                  className="flex-shrink-0 px-3"
-                  style={{ width: `${100 / itemsPerView}%` }}
+                  className="flex-shrink-0 w-64 px-3"
                 >
-                  <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-shadow h-48 flex flex-col items-center justify-center border border-gray-100">
-                    <img
-                      src={brand.logo}
-                      alt={brand.name}
-                      className="h-24 w-auto max-w-full object-contain mb-3"
-                      onError={(e) => {
-                        console.error(`Failed to load logo for ${brand.name}`);
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        const nextSibling = target.nextElementSibling as HTMLElement;
-                        if (nextSibling) {
-                          nextSibling.style.display = 'flex';
-                        }
-                      }}
-                    />
-                    <div
-                      className="hidden h-24 w-full items-center justify-center bg-gray-100 rounded-lg mb-3"
-                    >
-                      <span className="text-xl font-bold text-gray-700 text-center px-2">
-                        {brand.name}
-                      </span>
+                  <div className="bg-white rounded-xl shadow-lg p-8 h-48 flex flex-col items-center justify-center border border-gray-200">
+                    <div className="h-24 w-full flex items-center justify-center mb-3">
+                      <img
+                        src={brand.logo}
+                        alt={`${brand.name} logo`}
+                        className="max-h-20 max-w-full w-auto h-auto object-contain"
+                        crossOrigin="anonymous"
+                        loading="eager"
+                        style={{ display: 'block', visibility: 'visible' }}
+                        onLoad={(e) => {
+                          console.log(`✅ Logo loaded successfully: ${brand.name}`);
+                          const target = e.target as HTMLImageElement;
+                          target.style.opacity = '1';
+                        }}
+                        onError={(e) => {
+                          console.error(`❌ Logo failed to load: ${brand.name}`, brand.logo);
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                      <div
+                        className="hidden w-full h-full items-center justify-center bg-gradient-to-br from-orange-100 to-orange-50 rounded-lg"
+                        style={{ display: 'none' }}
+                      >
+                        <span className="text-xl font-bold text-orange-600 text-center px-2">
+                          {brand.name}
+                        </span>
+                      </div>
                     </div>
-                    <p className="text-sm font-medium text-gray-600 text-center">{brand.name}</p>
+                    <p className="text-sm font-semibold text-gray-700 text-center">{brand.name}</p>
                   </div>
                 </div>
               ))}

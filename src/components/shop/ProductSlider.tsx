@@ -40,24 +40,6 @@ const topProducts = [
   },
   {
     id: 5,
-    name: "Sheba Premium Wet Cat Food Variety Pack",
-    brand: "Sheba",
-    image: "https://m.media-amazon.com/images/I/71hNxLT4pxL._AC_SL1500_.jpg",
-    price: 202,
-    originalPrice: 238,
-    weight: "12 x 85g"
-  },
-  {
-    id: 6,
-    name: "Royal Canin Kitten Dry Cat Food",
-    brand: "Royal Canin",
-    image: "https://m.media-amazon.com/images/I/71K5T8XcTNL._AC_SL1500_.jpg",
-    price: 1450,
-    originalPrice: 1650,
-    weight: "4 kg"
-  },
-  {
-    id: 7,
     name: "Choostix Dog Treats Chicken Flavor",
     brand: "Choostix",
     image: "https://m.media-amazon.com/images/I/71j8KLcqRYL._AC_SL1500_.jpg",
@@ -66,7 +48,16 @@ const topProducts = [
     weight: "450g"
   },
   {
-    id: 8,
+    id: 6,
+    name: "Sheba Premium Wet Cat Food Variety Pack",
+    brand: "Sheba",
+    image: "https://m.media-amazon.com/images/I/71hNxLT4pxL._AC_SL1500_.jpg",
+    price: 202,
+    originalPrice: 238,
+    weight: "12 × 85g"
+  },
+  {
+    id: 7,
     name: "Pedigree Dentastix Daily Oral Care",
     brand: "Pedigree",
     image: "https://m.media-amazon.com/images/I/81qJh9W9NcL._AC_SL1500_.jpg",
@@ -75,13 +66,22 @@ const topProducts = [
     weight: "720g"
   },
   {
-    id: 9,
+    id: 8,
     name: "Whiskas Junior Kitten Wet Food",
     brand: "Whiskas",
     image: "https://m.media-amazon.com/images/I/71VT5ZqP9aL._AC_SL1500_.jpg",
     price: 320,
     originalPrice: 380,
-    weight: "12 x 85g"
+    weight: "12 × 85g"
+  },
+  {
+    id: 9,
+    name: "Royal Canin Kitten Dry Cat Food",
+    brand: "Royal Canin",
+    image: "https://m.media-amazon.com/images/I/71K5T8XcTNL._AC_SL1500_.jpg",
+    price: 1450,
+    originalPrice: 1650,
+    weight: "4 kg"
   },
   {
     id: 10,
@@ -116,10 +116,6 @@ export function ProductSlider() {
     setCurrentIndex((prev) => (prev - 1 + topProducts.length) % topProducts.length);
   };
 
-  const formatPrice = (price: number) => `₹${price.toLocaleString('en-IN')}`;
-  const calculateDiscount = (price: number, original: number) =>
-    Math.round(((original - price) / original) * 100);
-
   return (
     <div
       className="py-16 bg-gray-50"
@@ -143,63 +139,77 @@ export function ProductSlider() {
               }}
             >
               {topProducts.map((product) => {
-                const discount = calculateDiscount(product.price, product.originalPrice);
+                const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+
                 return (
                   <div
                     key={product.id}
-                    className="flex-shrink-0 px-4"
-                    style={{ width: `${100 / itemsPerView}%` }}
+                    className="flex-shrink-0 w-96 px-4"
                   >
-                    <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-shadow border border-gray-100">
+                    <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
                       {discount > 0 && (
-                        <span className="inline-block bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
+                        <span className="inline-block bg-orange-500 text-white px-4 py-1.5 rounded-full text-sm font-bold mb-4">
                           Now
                         </span>
                       )}
 
-                      <div className="relative h-72 mb-6 bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center p-4">
+                      <div className="relative w-full h-80 mb-6 rounded-xl overflow-hidden bg-white">
                         <img
                           src={product.image}
                           alt={product.name}
-                          className="w-full h-full object-contain"
-                          loading="lazy"
+                          className="w-full h-full object-contain p-4"
+                          crossOrigin="anonymous"
+                          loading="eager"
+                          style={{
+                            display: 'block',
+                            visibility: 'visible',
+                            backgroundColor: 'white',
+                            mixBlendMode: 'normal'
+                          }}
+                          onLoad={(e) => {
+                            console.log(`✅ Product image loaded: ${product.name}`);
+                            const target = e.target as HTMLImageElement;
+                            target.style.opacity = '1';
+                          }}
                           onError={(e) => {
-                            console.error(`Failed to load image for ${product.name}`);
+                            console.error(`❌ Product image failed: ${product.name}`, product.image);
                             const target = e.target as HTMLImageElement;
                             target.style.display = 'none';
-                            const nextSibling = target.nextElementSibling as HTMLElement;
-                            if (nextSibling) {
-                              nextSibling.style.display = 'flex';
-                            }
+                            const fallback = target.nextElementSibling as HTMLElement;
+                            if (fallback) fallback.style.display = 'flex';
                           }}
                         />
                         <div
-                          className="hidden absolute inset-0 items-center justify-center bg-gray-200"
+                          className="hidden absolute inset-0 items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50"
+                          style={{ display: 'none' }}
                         >
-                          <span className="text-gray-600 font-bold text-center px-4">
-                            {product.name}
-                          </span>
+                          <div className="text-center px-6">
+                            <div className="text-6xl mb-3">📦</div>
+                            <span className="text-gray-700 font-bold text-lg block">
+                              {product.name}
+                            </span>
+                          </div>
                         </div>
                       </div>
 
-                      <p className="text-sm text-gray-500 mb-1 uppercase tracking-wide">
+                      <p className="text-xs text-gray-500 uppercase tracking-wide mb-1 font-semibold">
                         {product.brand}
                       </p>
-                      <h3 className="font-bold text-gray-900 mb-2 text-lg min-h-[3.5rem] line-clamp-2">
+                      <h3 className="font-bold text-gray-900 mb-2 text-lg h-14 line-clamp-2">
                         {product.name}
                       </h3>
                       <p className="text-sm text-gray-600 mb-4">{product.weight}</p>
 
                       <div className="flex items-baseline gap-3 mb-6">
                         <span className="text-3xl font-bold text-orange-600">
-                          {formatPrice(product.price)}
+                          ₹{product.price.toLocaleString('en-IN')}
                         </span>
                         <span className="text-gray-400 line-through text-lg">
-                          {formatPrice(product.originalPrice)}
+                          ₹{product.originalPrice.toLocaleString('en-IN')}
                         </span>
                       </div>
 
-                      <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition-colors shadow-md hover:shadow-lg">
+                      <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition-colors shadow-md">
                         Order Now
                       </button>
                     </div>
