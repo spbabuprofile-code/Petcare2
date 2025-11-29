@@ -114,6 +114,10 @@ export function ProductSlider() {
                       src={product.images[0]}
                       alt={product.name}
                       className="w-full h-56 object-cover rounded-lg mb-4"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = `https://via.placeholder.com/400x400/CCCCCC/666666?text=${encodeURIComponent(product.brand)}`;
+                      }}
                     />
                     <h3 className="font-bold text-xl mb-2 text-gray-900 line-clamp-2">{product.name}</h3>
                     <p className="text-sm text-gray-600 mb-4">{product.brand}</p>

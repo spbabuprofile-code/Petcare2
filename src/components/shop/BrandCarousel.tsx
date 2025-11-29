@@ -77,6 +77,14 @@ export function BrandCarousel() {
                         src={brand.logo_image_url}
                         alt={`${brand.name} logo`}
                         className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.parentElement?.parentElement;
+                          if (fallback) {
+                            fallback.innerHTML = `<div class="w-full h-full flex items-center justify-center p-4"><p class="font-bold text-gray-800 text-lg text-center">${brand.name}</p></div>`;
+                          }
+                        }}
                       />
                     </div>
                   ) : (
