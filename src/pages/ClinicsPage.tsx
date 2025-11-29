@@ -7,76 +7,65 @@ import { Button } from '../components/common/Button';
 export function ClinicsPage() {
   const navigate = useNavigate();
   const [clinics, setClinics] = useState<any[]>([]);
-  const [selectedCity, setSelectedCity] = useState('all');
-  const [filteredClinics, setFilteredClinics] = useState<any[]>([]);
 
   useEffect(() => {
     loadClinics();
   }, []);
 
-  useEffect(() => {
-    if (selectedCity === 'all') {
-      setFilteredClinics(clinics);
-    } else {
-      setFilteredClinics(clinics.filter(c => c.city === selectedCity));
-    }
-  }, [selectedCity, clinics]);
-
   const loadClinics = async () => {
-    const { data } = await supabase.from('clinics').select('*').order('city');
+    const { data } = await supabase.from('clinics').select('*').order('name');
     if (data) {
       setClinics(data);
-      setFilteredClinics(data);
     }
   };
-
-  const cities = ['all', ...Array.from(new Set(clinics.map(c => c.city)))];
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-primary text-white py-12">
         <div className="section-container">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Clinics</h1>
-          <p className="text-xl">45+ clinics across 11 cities providing world-class pet care</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Bangalore Clinics</h1>
+          <p className="text-xl">Three convenient locations across Bangalore for comprehensive pet healthcare</p>
         </div>
       </div>
 
       <div className="section-container">
-        <div className="mb-8">
-          <h3 className="font-semibold mb-4">Filter by City</h3>
-          <div className="flex flex-wrap gap-3">
-            {cities.map((city) => (
-              <button
-                key={city}
-                onClick={() => setSelectedCity(city)}
-                className={`px-6 py-2 rounded-lg font-medium transition-colors ${
-                  selectedCity === city
-                    ? 'bg-primary text-white'
-                    : 'bg-white text-text-primary border border-gray-300 hover:border-primary'
-                }`}
-              >
-                {city === 'all' ? 'All Cities' : city}
-              </button>
-            ))}
-          </div>
+        <div className="mb-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">Serving Pet Parents Across Bangalore</h2>
+          <p className="text-text-secondary max-w-2xl mx-auto">
+            Visit any of our three state-of-the-art facilities equipped with modern diagnostic equipment,
+            experienced veterinary specialists, and compassionate care teams.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredClinics.map((clinic) => (
+          {clinics.map((clinic) => (
             <Card key={clinic.clinic_id}>
               <div className="mb-4">
-                <div className="w-full h-48 bg-gradient-to-br from-orange-100 to-blue-100 rounded-lg mb-4 flex items-center justify-center text-6xl">
-                  🏥
+                <img
+                  src="https://images.pexels.com/photos/6234623/pexels-photo-6234623.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt={`${clinic.name} - V-Care Pet Polyclinic`}
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
+                <h3 className="text-xl font-bold mb-3">{clinic.name.replace('V-Care Pet Polyclinic - ', '')}</h3>
+                <div className="space-y-2 mb-4">
+                  <p className="text-sm text-text-secondary flex items-start">
+                    <span className="mr-2 mt-0.5">📍</span>
+                    <span>{clinic.address}, {clinic.city} {clinic.pincode}</span>
+                  </p>
+                  <p className="text-sm font-semibold text-primary flex items-center">
+                    <span className="mr-2">📞</span>
+                    {clinic.name.includes('Kaikondrahalli') ? '08147 006345' : clinic.name.includes('Koramangala') ? '080 2552 5834' : '08147 006341'}
+                  </p>
+                  <p className="text-sm text-text-secondary flex items-center">
+                    <span className="mr-2">🕒</span>
+                    {clinic.operating_hours}
+                  </p>
+                  {clinic.is_24x7 && (
+                    <span className="inline-block bg-red-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+                      🚑 24/7 Emergency Care
+                    </span>
+                  )}
                 </div>
-                <h3 className="text-xl font-bold mb-2">{clinic.name}</h3>
-                <p className="text-sm text-text-secondary mb-1">📍 {clinic.address}</p>
-                <p className="text-sm text-text-secondary mb-1">🏙️ {clinic.city} - {clinic.pincode}</p>
-                <p className="text-sm text-text-secondary mb-2">🕒 {clinic.operating_hours}</p>
-                {clinic.is_24x7 && (
-                  <span className="inline-block bg-accent-green text-white text-xs px-2 py-1 rounded-full">
-                    24/7 Available
-                  </span>
-                )}
               </div>
               <div className="mb-4">
                 <p className="text-sm font-medium mb-2">Services Available:</p>
@@ -100,9 +89,9 @@ export function ClinicsPage() {
           ))}
         </div>
 
-        {filteredClinics.length === 0 && (
+        {clinics.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-xl text-text-secondary">No clinics found in this city</p>
+            <p className="text-xl text-text-secondary">Loading clinics...</p>
           </div>
         )}
       </div>

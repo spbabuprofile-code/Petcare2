@@ -11,7 +11,7 @@ export function AboutPage() {
         <div className="section-container text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About V-Care Pet Polyclinic</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Revolutionizing pet healthcare with human-grade medical facilities and compassionate care
+            Bangalore's trusted partner in advanced veterinary medicine with state-of-the-art facilities and board-certified specialists
           </p>
         </div>
       </section>
@@ -21,13 +21,14 @@ export function AboutPage() {
           <div>
             <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
             <p className="text-lg text-text-secondary mb-4">
-              At V-Care Pet Polyclinic, we believe every pet deserves access to world-class healthcare.
-              Our mission is to provide comprehensive, compassionate, and affordable veterinary services
-              to pet parents across India.
+              At V-Care Pet Polyclinic, we deliver advanced veterinary medicine to pets across Bangalore.
+              Our mission is to provide comprehensive, evidence-based healthcare with compassion and expertise,
+              ensuring every dog and cat receives the highest standard of medical care.
             </p>
             <p className="text-lg text-text-secondary mb-4">
-              With 45+ state-of-the-art clinics spanning 11 major cities, we've become India's most
-              trusted pet healthcare provider, serving over 72,000 happy customers.
+              With three strategically located clinics in Kaikondrahalli, Koramangala, and Whitefield,
+              we've earned the trust of Bangalore's pet-loving community through consistent excellence
+              in veterinary medicine, diagnostics, surgery, and emergency care.
             </p>
           </div>
           <img
@@ -102,23 +103,37 @@ export function AboutPage() {
       </section>
 
       <section className="section-container">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Presence</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <h2 className="text-3xl font-bold text-center mb-12">Our Bangalore Locations</h2>
+        <div className="grid md:grid-cols-3 gap-8">
           {[
-            { city: 'Gurgaon', clinics: 8 },
-            { city: 'Delhi', clinics: 7 },
-            { city: 'Noida', clinics: 6 },
-            { city: 'Mumbai', clinics: 5 },
-            { city: 'Bengaluru', clinics: 5 },
-            { city: 'Pune', clinics: 4 },
-            { city: 'Hyderabad', clinics: 4 },
-            { city: 'Kolkata', clinics: 3 },
-            { city: 'Thane', clinics: 2 },
-            { city: 'Ghaziabad', clinics: 2 },
+            {
+              name: 'Kaikondrahalli',
+              address: '65/1C, Sarjapur – Marathahalli Rd, Next to Jain Heights',
+              phone: '08147 006345',
+              emergency: true
+            },
+            {
+              name: 'Koramangala',
+              address: '1st Main Cross, Jakkasandra, 1st Block',
+              phone: '080 2552 5834',
+              emergency: false
+            },
+            {
+              name: 'Whitefield',
+              address: 'Ground Floor, 1, Whitefield Main Rd, Opp. CSI Church',
+              phone: '08147 006341',
+              emergency: true
+            },
           ].map((location) => (
-            <Card key={location.city}>
-              <h3 className="text-xl font-bold mb-2">{location.city}</h3>
-              <p className="text-text-secondary">{location.clinics} Clinics</p>
+            <Card key={location.name}>
+              <h3 className="text-xl font-bold mb-3 text-primary">{location.name}</h3>
+              <p className="text-sm text-text-secondary mb-3">{location.address}</p>
+              <p className="text-sm font-semibold mb-2">📞 {location.phone}</p>
+              {location.emergency && (
+                <span className="inline-block bg-red-500 text-white text-xs px-3 py-1 rounded-full">
+                  24/7 Emergency
+                </span>
+              )}
             </Card>
           ))}
         </div>

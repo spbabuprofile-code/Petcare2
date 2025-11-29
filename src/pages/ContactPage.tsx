@@ -91,52 +91,51 @@ export function ContactPage() {
             <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
 
             <Card className="mb-6">
-              <div className="flex items-start mb-4">
-                <div className="text-3xl mr-4">📞</div>
-                <div>
-                  <h3 className="font-semibold mb-1">Customer Support</h3>
-                  <p className="text-text-secondary">Monday - Sunday: 9:00 AM - 9:00 PM</p>
-                  <p className="text-primary font-medium mt-2">1800-123-4567</p>
-                </div>
+              <div>
+                <h3 className="font-semibold mb-3 text-lg">📍 Kaikondrahalli Clinic</h3>
+                <p className="text-text-secondary text-sm mb-2">
+                  65/1C, Sarjapur – Marathahalli Rd<br />
+                  Next to Jain Heights, Kaikondrahalli<br />
+                  Bangalore - 560035
+                </p>
+                <p className="text-primary font-semibold">📞 08147 006345</p>
+                <p className="text-xs text-accent-green mt-2">✓ 24/7 Emergency Care Available</p>
               </div>
             </Card>
 
             <Card className="mb-6">
-              <div className="flex items-start mb-4">
-                <div className="text-3xl mr-4">📧</div>
-                <div>
-                  <h3 className="font-semibold mb-1">Email Us</h3>
-                  <p className="text-text-secondary">General Inquiries</p>
-                  <p className="text-primary font-medium mt-2">support@vcarepet.com</p>
-                  <p className="text-text-secondary mt-3">For careers and partnerships</p>
-                  <p className="text-primary font-medium mt-1">careers@vcarepet.com</p>
-                </div>
+              <div>
+                <h3 className="font-semibold mb-3 text-lg">📍 Koramangala Clinic</h3>
+                <p className="text-text-secondary text-sm mb-2">
+                  1st Main Cross, Jakkasandra<br />
+                  1st Block, Koramangala<br />
+                  Bangalore - 560034
+                </p>
+                <p className="text-primary font-semibold">📞 080 2552 5834</p>
+                <p className="text-xs text-text-secondary mt-2">Hours: Mon-Sun 9:00 AM - 9:00 PM</p>
               </div>
             </Card>
 
             <Card className="mb-6">
-              <div className="flex items-start mb-4">
-                <div className="text-3xl mr-4">🚑</div>
-                <div>
-                  <h3 className="font-semibold mb-1">Emergency Care</h3>
-                  <p className="text-text-secondary">24/7 emergency services available at select locations</p>
-                  <p className="text-primary font-medium mt-2">Emergency Hotline: 1800-EMERGENCY</p>
-                </div>
+              <div>
+                <h3 className="font-semibold mb-3 text-lg">📍 Whitefield Clinic</h3>
+                <p className="text-text-secondary text-sm mb-2">
+                  Ground Floor, 1, Whitefield Main Rd<br />
+                  Opp. CSI Church, Sathya Sai Layout<br />
+                  Bangalore - 560066
+                </p>
+                <p className="text-primary font-semibold">📞 08147 006341</p>
+                <p className="text-xs text-accent-green mt-2">✓ 24/7 Emergency Care Available</p>
               </div>
             </Card>
 
             <Card>
-              <div className="flex items-start">
-                <div className="text-3xl mr-4">🏢</div>
-                <div>
-                  <h3 className="font-semibold mb-1">Head Office</h3>
-                  <p className="text-text-secondary">
-                    V-Care Pet Polyclinic<br />
-                    DLF Cyber City, Phase 2<br />
-                    Gurgaon, Haryana 122002<br />
-                    India
-                  </p>
-                </div>
+              <div>
+                <h3 className="font-semibold mb-3 text-lg">📧 Email & Support</h3>
+                <p className="text-text-secondary text-sm">General Inquiries & Appointments</p>
+                <p className="text-primary font-medium mt-1 mb-3">info@vcarepetpolyclinic.com</p>
+                <p className="text-text-secondary text-sm">Emergency Support</p>
+                <p className="text-primary font-medium mt-1">Call clinic numbers above for 24/7 emergency care</p>
               </div>
             </Card>
           </div>
