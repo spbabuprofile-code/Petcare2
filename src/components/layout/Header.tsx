@@ -4,7 +4,6 @@ import { useAuth } from '../../contexts/AuthContext';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isOurServicesOpen, setIsOurServicesOpen] = useState(false);
   const { user, signOut } = useAuth();
 
   return (
@@ -41,44 +40,9 @@ export function Header() {
               Food & Accessories
             </Link>
 
-            <div className="relative group">
-              <button
-                className="text-text-primary hover:text-primary font-semibold text-lg transition-colors"
-                onMouseEnter={() => setIsOurServicesOpen(true)}
-                onMouseLeave={() => setIsOurServicesOpen(false)}
-              >
-                Our Services
-              </button>
-              {isOurServicesOpen && (
-                <div
-                  className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg py-2 border border-gray-100"
-                  onMouseEnter={() => setIsOurServicesOpen(true)}
-                  onMouseLeave={() => setIsOurServicesOpen(false)}
-                >
-                  <Link to="/services/consultation" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
-                    Veterinary Consultation
-                  </Link>
-                  <Link to="/services/grooming" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
-                    Grooming Services
-                  </Link>
-                  <Link to="/services/surgery" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
-                    Surgery
-                  </Link>
-                  <Link to="/services/diagnostics" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
-                    Diagnostics
-                  </Link>
-                  <Link to="/services/emergency" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
-                    Emergency Care
-                  </Link>
-                  <Link to="/shop" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
-                    Pet Food & Supplies
-                  </Link>
-                  <Link to="/blog" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
-                    Pet Care Resources
-                  </Link>
-                </div>
-              )}
-            </div>
+            <Link to="/services" className="text-text-primary hover:text-primary font-semibold text-lg transition-colors">
+              Our Services
+            </Link>
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
@@ -171,6 +135,14 @@ export function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Food & Accessories
+              </Link>
+
+              <Link
+                to="/services"
+                className="text-text-primary hover:text-primary font-semibold py-2 px-2 rounded hover:bg-gray-50 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Our Services
               </Link>
 
               {user && (
