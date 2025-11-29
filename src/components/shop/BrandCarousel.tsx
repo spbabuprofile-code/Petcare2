@@ -4,19 +4,31 @@ import { supabase } from '../../lib/supabase';
 export function BrandCarousel() {
   const [brands, setBrands] = useState<any[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
     loadBrands();
   }, []);
 
   useEffect(() => {
-    if (brands.length > 0) {
+    if (brands.length > 0 && isAnimating) {
       const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % brands.length);
+        setCurrentIndex((prevIndex) => {
+          const next = prevIndex + 1;
+          if (next >= brands.length / 2) {
+            setTimeout(() => {
+              setIsAnimating(false);
+              setCurrentIndex(0);
+              setTimeout(() => setIsAnimating(true), 50);
+            }, 700);
+            return next;
+          }
+          return next;
+        });
       }, 3000);
       return () => clearInterval(interval);
     }
-  }, [brands.length]);
+  }, [brands.length, isAnimating]);
 
   const loadBrands = async () => {
     const { data } = await supabase
@@ -24,9 +36,13 @@ export function BrandCarousel() {
       .select('*')
       .eq('is_featured', true)
       .order('display_order');
-    if (data) {
-      setBrands([...data, ...data]);
+    if (data && data.length > 0) {
+      setBrands([...data, ...data, ...data]);
     }
+  };
+
+  const handleDotClick = (index: number) => {
+    setCurrentIndex(index);
   };
 
   return (
@@ -40,39 +56,52 @@ export function BrandCarousel() {
         </p>
 
         <div className="relative overflow-hidden">
-          <div className="flex items-center justify-center gap-12 py-8">
+          <div className="flex items-center justify-center py-8">
             <div
-              className="flex gap-12 transition-transform duration-700 ease-in-out"
+              className={`flex gap-8 ${isAnimating ? 'transition-transform duration-700 ease-in-out' : ''}`}
               style={{
-                transform: `translateX(-${currentIndex * 180}px)`,
+                transform: `translateX(-${currentIndex * 220}px)`,
               }}
             >
               {brands.map((brand, index) => (
                 <div
                   key={`${brand.brand_id}-${index}`}
-                  className="flex-shrink-0 w-40 h-32 flex items-center justify-center bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+                  className="flex-shrink-0 w-48 h-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden group cursor-pointer"
                 >
-                  <div className="text-center p-4">
-                    <p className="font-bold text-gray-800 text-base">{brand.name}</p>
-                  </div>
+                  {brand.product_image_url ? (
+                    <div className="relative w-full h-full">
+                      <img
+                        src={brand.product_image_url}
+                        alt={brand.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-4">
+                        <p className="font-bold text-white text-lg drop-shadow-lg">{brand.name}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
+                      <p className="font-bold text-gray-800 text-lg text-center">{brand.name}</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none z-10"></div>
         </div>
 
-        <div className="flex justify-center mt-6 gap-2">
-          {brands.slice(0, brands.length / 2).map((_, index) => (
+        <div className="flex justify-center mt-8 gap-3">
+          {brands.slice(0, brands.length / 3).map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                index === currentIndex % (brands.length / 2)
-                  ? 'bg-primary w-8'
-                  : 'bg-gray-300 hover:bg-gray-400'
+              onClick={() => handleDotClick(index)}
+              className={`rounded-full transition-all duration-300 ${
+                index === currentIndex % (brands.length / 3)
+                  ? 'bg-primary w-10 h-3'
+                  : 'bg-gray-300 hover:bg-gray-400 w-3 h-3'
               }`}
               aria-label={`Go to brand slide ${index + 1}`}
             />
