@@ -5,7 +5,7 @@ import { Button } from '../components/common/Button';
 export function GroomingPage() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-gradient-to-r from-purple-50 to-purple-100">
+      <div className="bg-gradient-to-r from-blue-50 to-blue-100">
         <div className="section-container py-16">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Pet Grooming Near You</h1>

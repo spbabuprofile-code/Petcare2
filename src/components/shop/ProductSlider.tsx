@@ -148,7 +148,7 @@ export function ProductSlider() {
                   >
                     <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
                       {discount > 0 && (
-                        <span className="inline-block bg-purple-500 text-white px-4 py-1.5 rounded-full text-sm font-bold mb-4">
+                        <span className="inline-block bg-blue-500 text-white px-4 py-1.5 rounded-full text-sm font-bold mb-4">
                           Now
                         </span>
                       )}
@@ -201,7 +201,7 @@ export function ProductSlider() {
                       <p className="text-sm text-gray-600 mb-4">{product.weight}</p>
 
                       <div className="flex items-baseline gap-3 mb-6">
-                        <span className="text-3xl font-bold text-purple-600">
+                        <span className="text-3xl font-bold text-blue-600">
                           ₹{product.price.toLocaleString('en-IN')}
                         </span>
                         <span className="text-gray-400 line-through text-lg">
@@ -209,7 +209,7 @@ export function ProductSlider() {
                         </span>
                       </div>
 
-                      <button className="w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-4 rounded-xl transition-colors shadow-md">
+                      <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 rounded-xl transition-colors shadow-md">
                         Order Now
                       </button>
                     </div>
@@ -243,7 +243,7 @@ export function ProductSlider() {
               onClick={() => setCurrentIndex(index)}
               className={`h-2 rounded-full transition-all ${
                 index === currentIndex
-                  ? 'w-8 bg-purple-500'
+                  ? 'w-8 bg-blue-500'
                   : 'w-2 bg-gray-300'
               }`}
               aria-label={`Go to product ${index + 1}`}

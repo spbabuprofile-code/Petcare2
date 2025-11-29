@@ -52,7 +52,7 @@ export function ShopPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="relative bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 overflow-hidden">
         <div className="section-container py-20 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
             <span className="text-primary">Your Pet's Favourite Food</span>
@@ -204,7 +204,7 @@ export function ShopPage() {
         </div>
       )}
 
-      <div className="bg-gradient-to-r from-primary to-purple-500 py-12">
+      <div className="bg-gradient-to-r from-primary to-blue-500 py-12">
         <div className="section-container text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Unlocking V-Care Pet Polyclinic: A Visual Guide to Seamless Pet Care

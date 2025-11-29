@@ -164,7 +164,7 @@ export function BookAppointmentPage() {
                           key={clinic.clinic_id}
                           className={`p-4 border-2 rounded-lg cursor-pointer transition-colors ${
                             formData.clinicId === clinic.clinic_id
-                              ? 'border-primary bg-purple-50'
+                              ? 'border-primary bg-blue-50'
                               : 'border-gray-300 hover:border-gray-400'
                           }`}
                         >
@@ -201,7 +201,7 @@ export function BookAppointmentPage() {
                           key={doctor.doctor_id}
                           className={`p-4 border-2 rounded-lg cursor-pointer transition-colors ${
                             formData.doctorId === doctor.doctor_id
-                              ? 'border-primary bg-purple-50'
+                              ? 'border-primary bg-blue-50'
                               : 'border-gray-300 hover:border-gray-400'
                           }`}
                         >
@@ -238,7 +238,7 @@ export function BookAppointmentPage() {
                             key={pet.pet_id}
                             className={`p-4 border-2 rounded-lg cursor-pointer transition-colors ${
                               formData.petId === pet.pet_id
-                                ? 'border-primary bg-purple-50'
+                                ? 'border-primary bg-blue-50'
                                 : 'border-gray-300 hover:border-gray-400'
                             }`}
                           >
