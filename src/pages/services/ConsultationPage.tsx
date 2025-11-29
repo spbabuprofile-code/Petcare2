@@ -1,9 +1,6 @@
-import { useNavigate } from 'react-router-dom';
 import { Card } from '../../components/common/Card';
-import { Button } from '../../components/common/Button';
 
 export function ConsultationPage() {
-  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen">
@@ -23,7 +20,6 @@ export function ConsultationPage() {
               diagnosis, and treatment plans for your pets. With experienced veterinarians
               and modern diagnostic facilities, we ensure your pet receives the best care possible.
             </p>
-            <Button onClick={() => navigate('/book-appointment')}>Book Consultation</Button>
           </div>
           <img
             src="https://images.pexels.com/photos/6234525/pexels-photo-6234525.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -46,7 +42,6 @@ export function ConsultationPage() {
               <li>✓ Preventive care advice</li>
               <li>✓ Vaccination guidance</li>
             </ul>
-            <Button fullWidth onClick={() => navigate('/book-appointment')}>Book Now</Button>
           </Card>
 
           <Card>
@@ -61,7 +56,6 @@ export function ConsultationPage() {
               <li>✓ Follow-up consultations</li>
               <li>✓ Expert recommendations</li>
             </ul>
-            <Button fullWidth onClick={() => navigate('/book-appointment')}>Book Now</Button>
           </Card>
 
           <Card>
@@ -76,7 +70,6 @@ export function ConsultationPage() {
               <li>✓ Critical care</li>
               <li>✓ Emergency treatment</li>
             </ul>
-            <Button fullWidth onClick={() => navigate('/book-appointment')}>Book Now</Button>
           </Card>
         </div>
 
@@ -104,13 +97,6 @@ export function ConsultationPage() {
           </div>
         </div>
 
-        <div className="text-center bg-gradient-to-r from-orange-50 to-blue-50 rounded-xl p-12">
-          <h2 className="text-3xl font-bold mb-4">Ready to Book?</h2>
-          <p className="text-xl text-text-secondary mb-6 max-w-2xl mx-auto">
-            Schedule a consultation with our expert veterinarians and give your pet the care they deserve
-          </p>
-          <Button onClick={() => navigate('/book-appointment')}>Book Appointment Now</Button>
-        </div>
       </div>
     </div>
   );
