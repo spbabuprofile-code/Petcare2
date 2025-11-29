@@ -18,7 +18,7 @@ export function BlogPage() {
     if (data) setPosts(data);
   };
 
-  const categories = ['all', 'Pet Health', 'Dog Care', 'Cat Care', 'Pet Nutrition', 'Grooming', 'Behavior & Training', 'Preventive Care'];
+  const categories = ['all', 'Health', 'Nutrition', 'Grooming', 'Training', 'Pet Care'];
   const filteredPosts = categoryFilter === 'all'
     ? posts
     : posts.filter(p => p.category === categoryFilter);
@@ -27,8 +27,8 @@ export function BlogPage() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-primary text-white py-12">
         <div className="section-container">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Pet Care Blog & Resources</h1>
-          <p className="text-xl">Expert veterinary advice, dog & cat health tips, and pet wellness guides from V-Care veterinarians</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Pet Care Blog</h1>
+          <p className="text-xl">Expert advice, tips, and guides for your pet's wellbeing</p>
         </div>
       </div>
 
@@ -54,8 +54,8 @@ export function BlogPage() {
 
         {filteredPosts.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-xl text-text-secondary mb-4">No pet care articles available yet</p>
-            <p className="text-text-light">Check back soon for expert veterinary advice on dog and cat health, nutrition, and wellness!</p>
+            <p className="text-xl text-text-secondary mb-4">No blog posts yet</p>
+            <p className="text-text-light">Check back soon for expert pet care advice!</p>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

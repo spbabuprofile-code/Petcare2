@@ -87,26 +87,22 @@ export function BookAppointmentPage() {
   };
 
   const serviceTypes = [
-    'Pet Vaccination (DHPP, FVRCP, Rabies)',
-    'General Pet Wellness Consultation',
-    'Pet Diagnostics (Blood Test, X-ray, Ultrasound)',
-    'Pet Emergency Care',
-    'Pet Surgery (Spay/Neuter, Orthopedic)',
-    'Pet Dental Care (Scaling, Polishing)',
-    'Pet Grooming & Spa Services',
-    'Deworming & Parasite Control',
-    'Pet Microchipping',
-    'Pet Nutrition Consultation',
-    'Senior Pet Care & Wellness',
-    'Puppy/Kitten First Visit',
+    'Veterinary Consultation',
+    'Grooming',
+    'Vaccination',
+    'Health Check-up',
+    'Surgery',
+    'Emergency Care',
+    'Dental Care',
+    'Diagnostics',
   ];
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-primary text-white py-12">
         <div className="section-container">
-          <h1 className="text-4xl font-bold mb-4">Book Pet Appointment</h1>
-          <p className="text-xl">Schedule a veterinary visit for your dog or cat at our Bangalore clinics in 3 easy steps</p>
+          <h1 className="text-4xl font-bold mb-4">Book an Appointment</h1>
+          <p className="text-xl">Schedule a visit for your pet in 3 easy steps</p>
         </div>
       </div>
 
@@ -137,17 +133,17 @@ export function BookAppointmentPage() {
             <form onSubmit={handleSubmit}>
               {step === 1 && (
                 <div>
-                  <h2 className="text-2xl font-bold mb-6">Select Pet Service & Clinic Location</h2>
+                  <h2 className="text-2xl font-bold mb-6">Select Service & Clinic</h2>
 
                   <div className="mb-6">
-                    <label className="block text-sm font-medium mb-2">Pet Healthcare Service *</label>
+                    <label className="block text-sm font-medium mb-2">Service Type *</label>
                     <select
                       className="input-field"
                       value={formData.serviceType}
                       onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
                       required
                     >
-                      <option value="">Choose a pet service</option>
+                      <option value="">Choose a service</option>
                       {serviceTypes.map((service) => (
                         <option key={service} value={service}>
                           {service}
@@ -157,7 +153,7 @@ export function BookAppointmentPage() {
                   </div>
 
                   <div className="mb-6">
-                    <label className="block text-sm font-medium mb-2">Select Bangalore Clinic Location *</label>
+                    <label className="block text-sm font-medium mb-2">Select Clinic *</label>
                     <div className="grid gap-4">
                       {clinics.map((clinic) => (
                         <label
@@ -191,10 +187,10 @@ export function BookAppointmentPage() {
 
               {step === 2 && (
                 <div>
-                  <h2 className="text-2xl font-bold mb-6">Choose Veterinarian & Your Pet</h2>
+                  <h2 className="text-2xl font-bold mb-6">Choose Doctor & Pet</h2>
 
                   <div className="mb-6">
-                    <label className="block text-sm font-medium mb-2">Select Veterinarian *</label>
+                    <label className="block text-sm font-medium mb-2">Select Doctor *</label>
                     <div className="grid gap-4">
                       {doctors.map((doctor) => (
                         <label
@@ -225,11 +221,11 @@ export function BookAppointmentPage() {
                   </div>
 
                   <div className="mb-6">
-                    <label className="block text-sm font-medium mb-2">Select Your Pet (Dog/Cat) *</label>
+                    <label className="block text-sm font-medium mb-2">Select Pet *</label>
                     {pets.length === 0 ? (
                       <div className="text-center p-6 bg-gray-50 rounded-lg">
-                        <p className="text-text-secondary mb-4">No pets registered in your account</p>
-                        <Button onClick={() => navigate('/account/pets')}>Add Your Pet</Button>
+                        <p className="text-text-secondary mb-4">No pets added yet</p>
+                        <Button onClick={() => navigate('/account/pets')}>Add a Pet</Button>
                       </div>
                     ) : (
                       <div className="grid gap-4">
@@ -267,7 +263,7 @@ export function BookAppointmentPage() {
 
               {step === 3 && (
                 <div>
-                  <h2 className="text-2xl font-bold mb-6">Select Appointment Date & Time</h2>
+                  <h2 className="text-2xl font-bold mb-6">Select Date & Time</h2>
 
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <Input
@@ -288,13 +284,13 @@ export function BookAppointmentPage() {
                   </div>
 
                   <div className="mb-6">
-                    <label className="block text-sm font-medium mb-2">Additional Notes for Veterinarian</label>
+                    <label className="block text-sm font-medium mb-2">Additional Notes</label>
                     <textarea
                       className="input-field"
                       rows={4}
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      placeholder="Any specific pet health concerns, symptoms, behavioral changes, or information for the veterinarian..."
+                      placeholder="Any specific concerns or information for the doctor..."
                     />
                   </div>
                 </div>
@@ -307,7 +303,7 @@ export function BookAppointmentPage() {
                   </Button>
                 )}
                 <Button type="submit" className="flex-1">
-                  {step === 3 ? 'Confirm Pet Appointment' : 'Next Step'}
+                  {step === 3 ? 'Confirm Appointment' : 'Next'}
                 </Button>
               </div>
             </form>

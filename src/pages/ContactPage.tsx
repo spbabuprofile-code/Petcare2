@@ -25,15 +25,15 @@ export function ContactPage() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-primary text-white py-12">
         <div className="section-container">
-          <h1 className="text-4xl font-bold mb-4">Contact V-Care Pet Polyclinic</h1>
-          <p className="text-xl">Reach our Bangalore pet clinics for appointments, emergencies, or pet health queries</p>
+          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
+          <p className="text-xl">We're here to help. Reach out to us anytime!</p>
         </div>
       </div>
 
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+            <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
             <Card>
               <form onSubmit={handleSubmit}>
                 {submitted && (
@@ -88,57 +88,54 @@ export function ContactPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-6">Bangalore Clinic Locations</h2>
+            <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
 
             <Card className="mb-6">
               <div>
-                <h3 className="font-semibold mb-3 text-lg text-primary">📍 Kaikondrahalli Pet Hospital</h3>
+                <h3 className="font-semibold mb-3 text-lg">📍 Kaikondrahalli Clinic</h3>
                 <p className="text-text-secondary text-sm mb-2">
                   65/1C, Sarjapur – Marathahalli Rd<br />
                   Next to Jain Heights, Kaikondrahalli<br />
-                  Bengaluru 560035, Karnataka, India
+                  Bangalore - 560035
                 </p>
                 <p className="text-primary font-semibold">📞 08147 006345</p>
-                <p className="text-xs text-green-600 mt-2 font-semibold">✓ 24/7 Emergency Pet Care | ICU Available</p>
-                <p className="text-xs text-text-light mt-1">Services: Surgery, Diagnostics, Dental, Grooming, Pharmacy</p>
+                <p className="text-xs text-accent-green mt-2">✓ 24/7 Emergency Care Available</p>
               </div>
             </Card>
 
             <Card className="mb-6">
               <div>
-                <h3 className="font-semibold mb-3 text-lg text-primary">📍 Koramangala Pet Clinic</h3>
+                <h3 className="font-semibold mb-3 text-lg">📍 Koramangala Clinic</h3>
                 <p className="text-text-secondary text-sm mb-2">
                   1st Main Cross, Jakkasandra<br />
                   1st Block, Koramangala<br />
-                  Bengaluru 560034, Karnataka, India
+                  Bangalore - 560034
                 </p>
                 <p className="text-primary font-semibold">📞 080 2552 5834</p>
-                <p className="text-xs text-text-secondary mt-2 font-medium">Hours: Monday-Sunday 9:00 AM - 9:00 PM</p>
-                <p className="text-xs text-text-light mt-1">Services: Vet Consultation, Vaccination, Dental, Grooming, Pet Food</p>
+                <p className="text-xs text-text-secondary mt-2">Hours: Mon-Sun 9:00 AM - 9:00 PM</p>
               </div>
             </Card>
 
             <Card className="mb-6">
               <div>
-                <h3 className="font-semibold mb-3 text-lg text-primary">📍 Whitefield Pet Hospital</h3>
+                <h3 className="font-semibold mb-3 text-lg">📍 Whitefield Clinic</h3>
                 <p className="text-text-secondary text-sm mb-2">
                   Ground Floor, 1, Whitefield Main Rd<br />
                   Opp. CSI Church, Sathya Sai Layout<br />
-                  Bengaluru 560066, Karnataka, India
+                  Bangalore - 560066
                 </p>
                 <p className="text-primary font-semibold">📞 08147 006341</p>
-                <p className="text-xs text-green-600 mt-2 font-semibold">✓ 24/7 Emergency Pet Care | Critical Care Unit</p>
-                <p className="text-xs text-text-light mt-1">Services: Emergency Care, Surgery, Diagnostics, Dental, Boarding</p>
+                <p className="text-xs text-accent-green mt-2">✓ 24/7 Emergency Care Available</p>
               </div>
             </Card>
 
             <Card>
               <div>
-                <h3 className="font-semibold mb-3 text-lg text-primary">📧 Email & Online Support</h3>
-                <p className="text-text-secondary text-sm">General Inquiries & Pet Appointments</p>
+                <h3 className="font-semibold mb-3 text-lg">📧 Email & Support</h3>
+                <p className="text-text-secondary text-sm">General Inquiries & Appointments</p>
                 <p className="text-primary font-medium mt-1 mb-3">info@vcarepetpolyclinic.com</p>
-                <p className="text-text-secondary text-sm">24/7 Pet Emergency Hotline</p>
-                <p className="text-primary font-medium mt-1">For emergencies, call Kaikondrahalli (08147 006345) or Whitefield (08147 006341) clinics directly</p>
+                <p className="text-text-secondary text-sm">Emergency Support</p>
+                <p className="text-primary font-medium mt-1">Call clinic numbers above for 24/7 emergency care</p>
               </div>
             </Card>
           </div>

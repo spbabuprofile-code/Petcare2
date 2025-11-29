@@ -8,7 +8,7 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-bold text-primary mb-4">V-Care Pet Polyclinic</h3>
             <p className="text-gray-400 mb-4">
-              Bangalore's premier pet healthcare destination specializing in comprehensive veterinary services for dogs and cats. Three advanced clinics across Bangalore providing expert pet care since 2020.
+              Advanced veterinary medicine for dogs and cats. Serving Bangalore with three state-of-the-art clinics and experienced veterinary specialists.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white">
@@ -35,33 +35,28 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Pet Healthcare Services</h4>
+            <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><Link to="/services/consultation" className="text-gray-400 hover:text-white">Pet Vaccination Programs</Link></li>
-              <li><Link to="/services/consultation" className="text-gray-400 hover:text-white">Pet Surgery & Orthopedics</Link></li>
-              <li><Link to="/shop" className="text-gray-400 hover:text-white">Pet Food & Nutrition</Link></li>
-              <li><Link to="/services/consultation" className="text-gray-400 hover:text-white">Pet Diagnostics (X-ray, Ultrasound)</Link></li>
-              <li><Link to="/services/consultation" className="text-gray-400 hover:text-white">Pet Dental Care</Link></li>
-              <li><Link to="/services/consultation" className="text-gray-400 hover:text-white">Pet Grooming & Spa</Link></li>
-              <li><Link to="/services/consultation" className="text-gray-400 hover:text-white">24/7 Emergency Pet Care</Link></li>
+              <li><Link to="/services/consultation" className="text-gray-400 hover:text-white">Veterinary Consultation</Link></li>
+              <li><Link to="/services/consultation" className="text-gray-400 hover:text-white">Surgery & Orthopedics</Link></li>
+              <li><Link to="/shop" className="text-gray-400 hover:text-white">Pet Food & Supplies</Link></li>
+              <li><Link to="/services/consultation" className="text-gray-400 hover:text-white">Diagnostics & Radiology</Link></li>
+              <li><Link to="/services/consultation" className="text-gray-400 hover:text-white">Dental Care</Link></li>
+              <li><Link to="/services/consultation" className="text-gray-400 hover:text-white">24/7 Emergency Care</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Bangalore Pet Clinics</h4>
+            <h4 className="text-lg font-semibold mb-4">Bangalore Clinics</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li className="text-white font-semibold">Kaikondrahalli Pet Hospital</li>
-              <li>65/1C, Sarjapur Rd, Bengaluru 560035</li>
+              <li className="text-white font-semibold">Kaikondrahalli</li>
               <li>📞 08147 006345</li>
-              <li className="text-green-400 text-xs">✓ 24/7 Emergency Pet Care</li>
-              <li className="mt-3 text-white font-semibold">Koramangala Pet Clinic</li>
-              <li>1st Block, Koramangala, Bengaluru 560034</li>
+              <li className="text-accent-green text-xs">✓ 24/7 Emergency</li>
+              <li className="mt-3 text-white font-semibold">Koramangala</li>
               <li>📞 080 2552 5834</li>
-              <li className="text-gray-500 text-xs">Mon-Sun: 9 AM - 9 PM</li>
-              <li className="mt-3 text-white font-semibold">Whitefield Pet Hospital</li>
-              <li>Whitefield Main Rd, Bengaluru 560066</li>
+              <li className="mt-3 text-white font-semibold">Whitefield</li>
               <li>📞 08147 006341</li>
-              <li className="text-green-400 text-xs">✓ 24/7 Emergency Pet Care</li>
+              <li className="text-accent-green text-xs">✓ 24/7 Emergency</li>
             </ul>
           </div>
         </div>

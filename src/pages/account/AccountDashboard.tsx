@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { supabase } from '../../lib/supabase';
 import { Card } from '../../components/common/Card';
+import { Button } from '../../components/common/Button';
 
 export function AccountDashboard() {
   const { user, signOut } = useAuth();
@@ -128,10 +129,12 @@ export function AccountDashboard() {
             <Card>
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold">My Pets</h2>
+                <Button onClick={() => navigate('/account/pets')}>Manage Pets</Button>
               </div>
               {pets.length === 0 ? (
                 <div className="text-center py-8">
-                  <p className="text-text-secondary">No pets added yet</p>
+                  <p className="text-text-secondary mb-4">No pets added yet</p>
+                  <Button onClick={() => navigate('/account/pets')}>Add Your First Pet</Button>
                 </div>
               ) : (
                 <div className="grid md:grid-cols-2 gap-4">
@@ -155,10 +158,14 @@ export function AccountDashboard() {
             <Card>
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold">Upcoming Appointments</h2>
+                <Button variant="secondary" onClick={() => navigate('/book-appointment')}>
+                  Book New
+                </Button>
               </div>
               {upcomingAppointments.length === 0 ? (
                 <div className="text-center py-8">
-                  <p className="text-text-secondary">No upcoming appointments</p>
+                  <p className="text-text-secondary mb-4">No upcoming appointments</p>
+                  <Button onClick={() => navigate('/book-appointment')}>Book Appointment</Button>
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -187,10 +194,14 @@ export function AccountDashboard() {
             <Card>
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold">Recent Orders</h2>
+                <Button variant="secondary" onClick={() => navigate('/shop')}>
+                  Shop Now
+                </Button>
               </div>
               {recentOrders.length === 0 ? (
                 <div className="text-center py-8">
-                  <p className="text-text-secondary">No orders yet</p>
+                  <p className="text-text-secondary mb-4">No orders yet</p>
+                  <Button onClick={() => navigate('/shop')}>Start Shopping</Button>
                 </div>
               ) : (
                 <div className="space-y-4">

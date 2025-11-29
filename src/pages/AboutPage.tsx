@@ -1,6 +1,9 @@
 import { Card } from '../components/common/Card';
+import { Button } from '../components/common/Button';
+import { useNavigate } from 'react-router-dom';
 
 export function AboutPage() {
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen">
@@ -8,7 +11,7 @@ export function AboutPage() {
         <div className="section-container text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About V-Care Pet Polyclinic</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Bangalore's premier pet healthcare destination specializing in comprehensive veterinary medicine for dogs and cats with state-of-the-art diagnostic facilities and experienced veterinary specialists
+            Bangalore's trusted partner in advanced veterinary medicine with state-of-the-art facilities and board-certified specialists
           </p>
         </div>
       </section>
@@ -16,17 +19,16 @@ export function AboutPage() {
       <section className="section-container">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-4">Our Mission: Exceptional Pet Healthcare</h2>
+            <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
             <p className="text-lg text-text-secondary mb-4">
-              V-Care Pet Polyclinic is dedicated to providing world-class veterinary care for dogs and cats across Bangalore.
-              Our mission is to enhance the health, happiness, and longevity of pets through evidence-based medicine,
-              compassionate care, and client education. We treat every pet as a valued family member deserving of the finest medical attention.
+              At V-Care Pet Polyclinic, we deliver advanced veterinary medicine to pets across Bangalore.
+              Our mission is to provide comprehensive, evidence-based healthcare with compassion and expertise,
+              ensuring every dog and cat receives the highest standard of medical care.
             </p>
             <p className="text-lg text-text-secondary mb-4">
-              Operating from three advanced veterinary facilities in Kaikondrahalli, Koramangala, and Whitefield,
-              we serve pet parents throughout Bangalore with comprehensive services including preventive care,
-              advanced diagnostics (digital X-ray, ultrasound, in-house laboratory), surgical procedures,
-              dental care, emergency medicine, and specialized treatments for complex pet health conditions.
+              With three strategically located clinics in Kaikondrahalli, Koramangala, and Whitefield,
+              we've earned the trust of Bangalore's pet-loving community through consistent excellence
+              in veterinary medicine, diagnostics, surgery, and emergency care.
             </p>
           </div>
           <img
@@ -39,89 +41,97 @@ export function AboutPage() {
 
       <section className="bg-gray-50 py-16">
         <div className="section-container">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Pet Parents Choose V-Care</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Why Choose V-Care</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card>
               <div className="text-5xl mb-4">🏥</div>
-              <h3 className="text-xl font-semibold mb-2">Advanced Pet Diagnostic Center</h3>
+              <h3 className="text-xl font-semibold mb-2">Advanced Facilities</h3>
               <p className="text-text-secondary">
-                Digital X-ray, ultrasound, ECG, complete blood count (CBC), biochemistry profiles, urinalysis, fecal testing, and cytology for accurate pet diagnosis
+                State-of-the-art diagnostic equipment, surgical facilities, and in-patient care units
               </p>
             </Card>
             <Card>
-              <div className="text-5xl mb-4">🐶</div>
-              <h3 className="text-xl font-semibold mb-2">Experienced Veterinary Team</h3>
+              <div className="text-5xl mb-4">👨‍⚕️</div>
+              <h3 className="text-xl font-semibold mb-2">Expert Veterinarians</h3>
               <p className="text-text-secondary">
-                Board-certified veterinarians specializing in small animal medicine, surgery, dermatology, cardiology, and emergency care for dogs and cats
+                Highly qualified doctors with specializations in various fields of veterinary medicine
               </p>
             </Card>
             <Card>
               <div className="text-5xl mb-4">🚑</div>
-              <h3 className="text-xl font-semibold mb-2">24/7 Emergency Pet Hospital</h3>
+              <h3 className="text-xl font-semibold mb-2">24/7 Emergency Care</h3>
               <p className="text-text-secondary">
-                Round-the-clock critical care at Kaikondrahalli & Whitefield for pet emergencies, trauma, poisoning, and life-threatening conditions
+                Round-the-clock emergency services at select locations for critical pet care
               </p>
             </Card>
             <Card>
-              <div className="text-5xl mb-4">⚕️</div>
-              <h3 className="text-xl font-semibold mb-2">Comprehensive Pet Surgery</h3>
+              <div className="text-5xl mb-4">📱</div>
+              <h3 className="text-xl font-semibold mb-2">Digital Health Records</h3>
               <p className="text-text-secondary">
-                Advanced surgical suite with modern anesthesia monitoring, sterile environment, and post-operative ICU for spay/neuter, orthopedic, and soft tissue surgeries
+                Access your pet's complete medical history, prescriptions, and reports anytime, anywhere
               </p>
             </Card>
             <Card>
-              <div className="text-5xl mb-4">🦷</div>
-              <h3 className="text-xl font-semibold mb-2">Pet Dental Care Center</h3>
+              <div className="text-5xl mb-4">🚚</div>
+              <h3 className="text-xl font-semibold mb-2">3-Hour Pet Food Delivery</h3>
               <p className="text-text-secondary">
-                Professional dental scaling, polishing, extractions, and oral surgery with safe anesthesia protocols for maintaining your pet's oral health
+                Premium pet food and supplies delivered to your doorstep in just 3 hours
               </p>
             </Card>
             <Card>
-              <div className="text-5xl mb-4">📊</div>
-              <h3 className="text-xl font-semibold mb-2">Pet Vaccination Programs</h3>
+              <div className="text-5xl mb-4">⭐</div>
+              <h3 className="text-xl font-semibold mb-2">Trusted by Thousands</h3>
               <p className="text-text-secondary">
-                Core vaccinations (DHPP, FVRCP, Rabies) and non-core vaccines (Bordetella, Leptospirosis, FeLV) with customized immunization schedules
+                5.0-star rating with 72,000+ reviews from satisfied pet parents across India
               </p>
             </Card>
           </div>
         </div>
       </section>
 
+      <section className="section-container">
+        <div className="bg-gradient-to-r from-orange-50 to-blue-50 rounded-2xl p-12 text-center">
+          <h2 className="text-3xl font-bold mb-4">Join Our Growing Family</h2>
+          <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
+            Experience the difference that compassionate, professional pet care can make.
+            Book your first appointment today!
+          </p>
+          <Button onClick={() => navigate('/book-appointment')}>
+            Book Appointment Now
+          </Button>
+        </div>
+      </section>
 
       <section className="section-container">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Bangalore Pet Clinic Locations</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">Our Bangalore Locations</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              name: 'Kaikondrahalli Pet Clinic',
-              address: '65/1C, Sarjapur – Marathahalli Rd, Next to Jain Heights, Kaikondrahalli, Bengaluru 560035',
+              name: 'Kaikondrahalli',
+              address: '65/1C, Sarjapur – Marathahalli Rd, Next to Jain Heights',
               phone: '08147 006345',
-              emergency: true,
-              services: 'Full-service veterinary hospital with 24/7 emergency care, surgery, diagnostics, and pet ICU'
+              emergency: true
             },
             {
-              name: 'Koramangala Pet Clinic',
-              address: '1st Main Cross, Jakkasandra, 1st Block, Koramangala, Bengaluru 560034',
+              name: 'Koramangala',
+              address: '1st Main Cross, Jakkasandra, 1st Block',
               phone: '080 2552 5834',
-              emergency: false,
-              services: 'Comprehensive pet healthcare, vaccination, grooming, diagnostics, and dental care'
+              emergency: false
             },
             {
-              name: 'Whitefield Pet Clinic',
-              address: 'Ground Floor, 1, Whitefield Main Rd, Opp. CSI Church, Sathya Sai Layout, Bengaluru 560066',
+              name: 'Whitefield',
+              address: 'Ground Floor, 1, Whitefield Main Rd, Opp. CSI Church',
               phone: '08147 006341',
-              emergency: true,
-              services: 'Advanced veterinary facility with 24/7 emergency services, surgery, and specialized pet care'
+              emergency: true
             },
           ].map((location) => (
             <Card key={location.name}>
               <h3 className="text-xl font-bold mb-3 text-primary">{location.name}</h3>
               <p className="text-sm text-text-secondary mb-3">{location.address}</p>
               <p className="text-sm font-semibold mb-2">📞 {location.phone}</p>
-              <p className="text-xs text-text-light mb-3">{location.services}</p>
               {location.emergency && (
-                <span className="inline-block bg-red-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                  🚑 24/7 Emergency Pet Care
+                <span className="inline-block bg-red-500 text-white text-xs px-3 py-1 rounded-full">
+                  24/7 Emergency
                 </span>
               )}
             </Card>

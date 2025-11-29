@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import { Card } from '../components/common/Card';
+import { Button } from '../components/common/Button';
+import { useCart } from '../contexts/CartContext';
 
 export function ShopPage() {
   const [products, setProducts] = useState<any[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
   const [petTypeFilter, setPetTypeFilter] = useState('all');
   const [categoryFilter, setCategoryFilter] = useState('all');
+  const { addToCart } = useCart();
 
   useEffect(() => {
     loadProducts();
@@ -38,13 +41,24 @@ export function ShopPage() {
     setFilteredProducts(filtered);
   };
 
+  const handleAddToCart = (product: any) => {
+    addToCart({
+      product_id: product.product_id,
+      name: product.name,
+      brand: product.brand,
+      price: product.price,
+      quantity: 1,
+      image: product.images[0] || '',
+      weight: product.weight,
+    });
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-primary text-white py-12">
         <div className="section-container">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Premium Pet Food & Accessories</h1>
-          <p className="text-xl">Veterinary-recommended dog and cat food, treats, supplements & supplies for Bangalore pet parents</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Pet Food & Supplies</h1>
+          <p className="text-xl">Premium quality products delivered to your doorstep in 3 hours</p>
         </div>
       </div>
 
@@ -52,7 +66,7 @@ export function ShopPage() {
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-1">
             <Card>
-              <h3 className="text-xl font-semibold mb-4">Filter Products</h3>
+              <h3 className="text-xl font-semibold mb-4">Filters</h3>
 
               <div className="mb-6">
                 <h4 className="font-medium mb-2">Pet Type</h4>
@@ -66,14 +80,14 @@ export function ShopPage() {
                         onChange={() => setPetTypeFilter(type)}
                         className="mr-2"
                       />
-                      <span className="capitalize">{type === 'all' ? 'All Pets' : type === 'dog' ? 'Dogs' : 'Cats'}</span>
+                      <span className="capitalize">{type === 'all' ? 'All' : type}</span>
                     </label>
                   ))}
                 </div>
               </div>
 
               <div className="mb-6">
-                <h4 className="font-medium mb-2">Product Category</h4>
+                <h4 className="font-medium mb-2">Category</h4>
                 <div className="space-y-2">
                   {['all', 'food', 'treats', 'supplements', 'accessories'].map((cat) => (
                     <label key={cat} className="flex items-center">
@@ -84,7 +98,7 @@ export function ShopPage() {
                         onChange={() => setCategoryFilter(cat)}
                         className="mr-2"
                       />
-                      <span className="capitalize">{cat === 'all' ? 'All Categories' : cat === 'food' ? 'Pet Food' : cat === 'treats' ? 'Pet Treats' : cat === 'supplements' ? 'Pet Supplements' : 'Pet Accessories'}</span>
+                      <span className="capitalize">{cat}</span>
                     </label>
                   ))}
                 </div>
@@ -94,13 +108,13 @@ export function ShopPage() {
 
           <div className="lg:col-span-3">
             <div className="mb-6 flex justify-between items-center">
-              <p className="text-text-secondary">{filteredProducts.length} pet products available</p>
+              <p className="text-text-secondary">{filteredProducts.length} products found</p>
             </div>
 
             {filteredProducts.length === 0 ? (
               <div className="text-center py-16">
-                <p className="text-xl text-text-secondary mb-4">No pet products found</p>
-                <p className="text-text-light">Try adjusting your filters or browse all categories</p>
+                <p className="text-xl text-text-secondary mb-4">No products found</p>
+                <p className="text-text-light">Try adjusting your filters</p>
               </div>
             ) : (
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -122,6 +136,13 @@ export function ShopPage() {
                         <span className="text-sm text-red-500">Out of Stock</span>
                       )}
                     </div>
+                    <Button
+                      fullWidth
+                      onClick={() => handleAddToCart(product)}
+                      disabled={product.stock === 0}
+                    >
+                      Add to Cart
+                    </Button>
                   </Card>
                 ))}
               </div>
