@@ -92,8 +92,32 @@ export function ClinicsPage() {
         </div>
 
         {clinics.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-xl text-text-secondary">Loading clinics...</p>
+          <div className="py-8">
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="text-xl font-bold mb-4 text-primary">1️⃣ Kaikondrahalli</h3>
+                <p className="text-sm text-text-secondary leading-relaxed mb-3">
+                  65/1C, Sarjapur – Marathahalli Rd, Next to Jain Heights, Kaikondrahalli, Bengaluru 560035
+                </p>
+                <p className="text-sm font-semibold text-primary">📞 08147 006345</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="text-xl font-bold mb-4 text-primary">2️⃣ Koramangala</h3>
+                <p className="text-sm text-text-secondary leading-relaxed mb-3">
+                  1st Main Cross, Jakkasandra, 1st Block, Koramangala, Bengaluru 560034
+                </p>
+                <p className="text-sm font-semibold text-primary">📞 080 2552 5834</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="text-xl font-bold mb-4 text-primary">3️⃣ Whitefield</h3>
+                <p className="text-sm text-text-secondary leading-relaxed mb-3">
+                  Ground Floor, 1, Whitefield Main Rd, Opp. CSI Church, Sathya Sai Layout, Whitefield, Bengaluru 560066
+                </p>
+                <p className="text-sm font-semibold text-primary">📞 08147 006341</p>
+              </div>
+            </div>
           </div>
         )}
       </div>
