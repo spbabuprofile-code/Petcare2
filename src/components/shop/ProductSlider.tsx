@@ -113,7 +113,7 @@ export function ProductSlider() {
                     <img
                       src={product.images[0]}
                       alt={product.name}
-                      className="w-full h-56 object-cover rounded-lg mb-4"
+                      className="w-full h-64 object-contain rounded-lg mb-4 bg-white"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = `https://via.placeholder.com/400x400/CCCCCC/666666?text=${encodeURIComponent(product.brand)}`;
@@ -131,7 +131,8 @@ export function ProductSlider() {
                       <Button
                         variant="primary"
                         onClick={() => handleAddToCart(product)}
-                        className="bg-black text-white px-5 py-2.5 rounded-lg hover:bg-gray-800 transition-colors text-sm font-semibold"
+                        className="bg-orange-500 text-white px-5 py-2.5 rounded-lg hover:bg-orange-600 transition-colors text-sm font-semibold"
+                        style={{ backgroundColor: '#FF6B35' }}
                       >
                         Order Now
                       </Button>
