@@ -84,7 +84,7 @@ export function Header() {
           <div className="hidden lg:flex items-center space-x-4">
             {user && (
               <div className="relative group">
-                <button className="px-6 py-2.5 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-orange-50 transition-colors">
+                <button className="px-6 py-2.5 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-purple-50 transition-colors">
                   Account
                 </button>
                 <div className="absolute right-0 top-full mt-2 w-52 bg-white shadow-lg rounded-lg py-2 border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">

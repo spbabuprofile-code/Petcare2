@@ -12,7 +12,7 @@ export function SignatureServices() {
         </p>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-none">
+          <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-none">
             <div className="flex items-start justify-between">
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">2 Hours Delivery</h3>

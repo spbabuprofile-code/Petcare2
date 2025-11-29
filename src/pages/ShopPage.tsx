@@ -204,7 +204,7 @@ export function ShopPage() {
         </div>
       )}
 
-      <div className="bg-gradient-to-r from-primary to-orange-500 py-12">
+      <div className="bg-gradient-to-r from-primary to-purple-500 py-12">
         <div className="section-container text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Unlocking V-Care Pet Polyclinic: A Visual Guide to Seamless Pet Care

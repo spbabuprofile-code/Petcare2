@@ -5,7 +5,7 @@ import { Button } from '../../components/common/Button';
 export function ConsultationPage() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="relative bg-gradient-to-r from-orange-50 to-orange-100 overflow-hidden">
+      <div className="relative bg-gradient-to-r from-purple-50 to-purple-100 overflow-hidden">
         <div className="section-container py-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -231,7 +231,7 @@ export function ConsultationPage() {
             What to Expect During Your Pet's Visit
           </h2>
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <Card className="bg-orange-50">
+            <Card className="bg-purple-50">
               <h3 className="text-xl font-bold mb-4 text-primary">Before Your Pet's Appointment</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">

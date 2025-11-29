@@ -126,10 +126,10 @@ export function BrandCarousel() {
                         }}
                       />
                       <div
-                        className="hidden w-full h-full items-center justify-center bg-gradient-to-br from-orange-100 to-orange-50 rounded-lg"
+                        className="hidden w-full h-full items-center justify-center bg-gradient-to-br from-purple-100 to-purple-50 rounded-lg"
                         style={{ display: 'none' }}
                       >
-                        <span className="text-xl font-bold text-orange-600 text-center px-2">
+                        <span className="text-xl font-bold text-purple-600 text-center px-2">
                           {brand.name}
                         </span>
                       </div>
@@ -165,7 +165,7 @@ export function BrandCarousel() {
               onClick={() => setCurrentIndex(index)}
               className={`h-2 rounded-full transition-all ${
                 index === currentIndex
-                  ? 'w-8 bg-orange-500'
+                  ? 'w-8 bg-purple-500'
                   : 'w-2 bg-gray-300'
               }`}
               aria-label={`Go to brand ${index + 1}`}

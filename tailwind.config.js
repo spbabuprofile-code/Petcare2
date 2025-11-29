@@ -7,17 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#FF6B35',
-        secondary: '#4A4A4A',
+        primary: '#8B5CF6',
+        secondary: '#6D28D9',
         accent: {
           green: '#10B981',
           blue: '#3B82F6',
           yellow: '#F59E0B',
         },
         text: {
-          primary: '#1F2937',
-          secondary: '#6B7280',
-          light: '#9CA3AF',
+          primary: '#8B5CF6',
+          secondary: '#7C3AED',
+          light: '#A78BFA',
         },
       },
       fontFamily: {

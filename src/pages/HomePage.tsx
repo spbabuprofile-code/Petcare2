@@ -70,7 +70,7 @@ export function HomePage() {
 
   return (
     <div className="min-h-screen">
-      <section className="relative bg-gradient-to-r from-orange-50 to-blue-50 py-20">
+      <section className="relative bg-gradient-to-r from-purple-50 to-blue-50 py-20">
         <div className="section-container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -83,13 +83,13 @@ export function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <button
                   onClick={() => navigate('/book-appointment')}
-                  className="bg-primary hover:bg-[#E55A2A] text-white px-6 py-3.5 rounded-lg font-semibold text-base sm:text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
+                  className="bg-primary hover:bg-[#7C3AED] text-white px-6 py-3.5 rounded-lg font-semibold text-base sm:text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
                 >
                   Book Veterinary Appointment
                 </button>
                 <button
                   onClick={() => navigate('/shop')}
-                  className="bg-white border-2 border-primary text-primary hover:bg-orange-50 px-6 py-3.5 rounded-lg font-semibold text-base sm:text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
+                  className="bg-white border-2 border-primary text-primary hover:bg-purple-50 px-6 py-3.5 rounded-lg font-semibold text-base sm:text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
                 >
                   Shop Premium Pet Food
                 </button>
