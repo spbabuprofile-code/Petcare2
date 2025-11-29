@@ -111,7 +111,7 @@ export function ConsultationPage() {
 
           <Card className="overflow-hidden">
             <img
-              src="https://images.pexels.com/photos/5731883/pexels-photo-5731883.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/13.jpg"
               alt="Modern Clinics"
               className="w-full h-64 object-cover"
             />
