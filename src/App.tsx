@@ -14,6 +14,7 @@ import { ContactPage } from './pages/ContactPage';
 import { LoginPage } from './pages/LoginPage';
 import { AccountDashboard } from './pages/account/AccountDashboard';
 import { ConsultationPage } from './pages/services/ConsultationPage';
+import { GroomingPage } from './pages/GroomingPage';
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
                 <Route path="/account" element={<AccountDashboard />} />
                 <Route path="/account/*" element={<AccountDashboard />} />
                 <Route path="/services/consultation" element={<ConsultationPage />} />
+                <Route path="/services/grooming" element={<GroomingPage />} />
+                <Route path="/grooming" element={<GroomingPage />} />
                 <Route path="/services/*" element={<ConsultationPage />} />
                 <Route path="/wellness-plans" element={<AboutPage />} />
                 <Route path="/terms" element={<StaticPage title="Terms & Conditions" />} />
