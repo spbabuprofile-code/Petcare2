@@ -6,7 +6,11 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold text-primary mb-4">V-Care Pet Polyclinic</h3>
+            <img
+              src="/image copy copy copy.png"
+              alt="V-Care Pet Polyclinic"
+              className="h-16 w-auto mb-4"
+            />
             <p className="text-gray-400 mb-4">
               Bangalore's premier pet healthcare destination specializing in comprehensive veterinary services for dogs and cats. Three advanced clinics across Bangalore providing expert pet care since 2020.
             </p>
