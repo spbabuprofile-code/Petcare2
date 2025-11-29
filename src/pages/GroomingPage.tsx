@@ -47,7 +47,7 @@ export function GroomingPage() {
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <Card className="overflow-hidden">
             <img
-              src="https://images.pexels.com/photos/4498185/pexels-photo-4498185.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/3.jpg"
               alt="Trained and Certified Groomers"
               className="w-full h-64 object-cover"
             />
@@ -61,7 +61,7 @@ export function GroomingPage() {
 
           <Card className="overflow-hidden">
             <img
-              src="https://images.pexels.com/photos/7210754/pexels-photo-7210754.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/4.jpg"
               alt="Separate Grooming Areas for Cats"
               className="w-full h-64 object-cover"
             />
@@ -77,7 +77,7 @@ export function GroomingPage() {
         <div className="grid md:grid-cols-3 gap-8">
           <Card className="overflow-hidden">
             <img
-              src="https://images.pexels.com/photos/6235233/pexels-photo-6235233.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/5.jpg"
               alt="Premium International Grooming Products"
               className="w-full h-64 object-cover"
             />
@@ -91,7 +91,7 @@ export function GroomingPage() {
 
           <Card className="overflow-hidden">
             <img
-              src="https://images.pexels.com/photos/7210258/pexels-photo-7210258.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/6.jpg"
               alt="Relaxing Environment for All Pets"
               className="w-full h-64 object-cover"
             />
