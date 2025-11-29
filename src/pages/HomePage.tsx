@@ -80,7 +80,21 @@ export function HomePage() {
               <p className="text-xl text-text-secondary mb-8">
                 Advanced veterinary medicine meets compassionate care. Providing comprehensive healthcare services for dogs and cats across Bangalore with state-of-the-art facilities and experienced veterinary specialists.
               </p>
-              <div className="mt-8 flex items-center space-x-6">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <button
+                  onClick={() => navigate('/book-appointment')}
+                  className="bg-primary hover:bg-[#E55A2A] text-white px-8 py-3.5 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  Book Veterinary Appointment
+                </button>
+                <button
+                  onClick={() => navigate('/shop')}
+                  className="bg-white border-2 border-primary text-primary hover:bg-orange-50 px-8 py-3.5 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  Shop Premium Pet Food
+                </button>
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
                 <div className="flex items-center">
                   <span className="text-2xl font-bold text-primary">4.9</span>
                   <div className="ml-2 text-yellow-400">★★★★★</div>
