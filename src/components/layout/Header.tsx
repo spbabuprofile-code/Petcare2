@@ -13,7 +13,11 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-text-primary">V-Care Pet Polyclinic</span>
+            <img
+              src="/image copy copy.png"
+              alt="V-Care Pet Polyclinic"
+              className="h-12 md:h-14 w-auto"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-10">

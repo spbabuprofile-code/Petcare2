@@ -70,31 +70,44 @@ export function HomePage() {
 
   return (
     <div className="min-h-screen">
-      <section className="relative bg-gradient-to-r from-orange-50 to-blue-50 py-20">
+      <section className="relative bg-gray-50 py-16 md:py-20">
         <div className="section-container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-text-primary">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight">
                 Your Love, Our Care
               </h1>
-              <p className="text-xl text-text-secondary mb-8">
+              <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
                 Advanced veterinary medicine meets compassionate care. Providing comprehensive healthcare services for dogs and cats across Bangalore with state-of-the-art facilities and experienced veterinary specialists.
               </p>
-              <div className="mt-8 flex items-center space-x-6">
-                <div className="flex items-center">
-                  <span className="text-2xl font-bold text-primary">4.9</span>
-                  <div className="ml-2 text-yellow-400">★★★★★</div>
-                </div>
-                <div className="text-text-secondary">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Button
+                  onClick={() => navigate('/book-appointment')}
+                  className="bg-primary hover:bg-[#E55A2A] text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-md transition-all"
+                >
+                  Book Veterinary Appointment
+                </Button>
+                <Button
+                  onClick={() => navigate('/shop')}
+                  variant="secondary"
+                  className="border-2 border-primary text-primary hover:bg-orange-50 px-8 py-3 rounded-lg font-semibold text-lg transition-all"
+                >
+                  Shop Premium Pet Food
+                </Button>
+              </div>
+              <div className="flex items-center space-x-3">
+                <span className="text-4xl font-bold text-primary">4.9</span>
+                <div className="text-yellow-400 text-2xl">★★★★★</div>
+                <div className="text-gray-600 ml-2">
                   Trusted by thousands of pet parents in Bangalore
                 </div>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative order-1 lg:order-2">
               <img
-                src="https://images.pexels.com/photos/6235231/pexels-photo-6235231.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Veterinary care for pets at V-Care Pet Polyclinic Bangalore"
-                className="rounded-2xl shadow-2xl"
+                src="/image copy copy.png"
+                alt="Veterinarian examining German Shepherd at V-Care Pet Polyclinic Bangalore"
+                className="rounded-2xl shadow-2xl w-full h-auto"
               />
             </div>
           </div>
