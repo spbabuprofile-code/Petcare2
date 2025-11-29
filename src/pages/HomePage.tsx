@@ -236,25 +236,25 @@ export function HomePage() {
       <section className="bg-primary text-white py-16">
         <div className="section-container text-center">
           <h2 className="text-4xl font-bold mb-4">Visit Our Bangalore Clinics</h2>
-          <p className="text-xl mb-8">Three convenient locations across Bangalore to serve you better</p>
+          <p className="text-xl mb-8">Three convenient locations across Bangalore for comprehensive pet healthcare</p>
           <div className="grid md:grid-cols-3 gap-6 text-left">
             <div className="bg-white bg-opacity-10 p-6 rounded-lg">
               <h3 className="font-bold text-lg mb-2">Kaikondrahalli</h3>
-              <p className="text-sm mb-2">65/1C, Sarjapur – Marathahalli Rd<br/>Next to Jain Heights</p>
+              <p className="text-sm mb-2">65/1C, Sarjapur – Marathahalli Rd<br/>Next to Jain Heights, Kaikondrahalli<br/>Bengaluru 560035</p>
               <p className="text-sm font-semibold">📞 08147 006345</p>
-              <p className="text-xs mt-2">24/7 Emergency Available</p>
+              <p className="text-xs mt-2 font-semibold text-yellow-300">✓ 24/7 Emergency Pet Care</p>
             </div>
             <div className="bg-white bg-opacity-10 p-6 rounded-lg">
               <h3 className="font-bold text-lg mb-2">Koramangala</h3>
-              <p className="text-sm mb-2">1st Main Cross, Jakkasandra<br/>1st Block, Koramangala</p>
+              <p className="text-sm mb-2">1st Main Cross, Jakkasandra<br/>1st Block, Koramangala<br/>Bengaluru 560034</p>
               <p className="text-sm font-semibold">📞 080 2552 5834</p>
-              <p className="text-xs mt-2">Mon-Sun: 9 AM - 9 PM</p>
+              <p className="text-xs mt-2">Hours: Mon-Sun 9:00 AM - 9:00 PM</p>
             </div>
             <div className="bg-white bg-opacity-10 p-6 rounded-lg">
               <h3 className="font-bold text-lg mb-2">Whitefield</h3>
-              <p className="text-sm mb-2">Ground Floor, Whitefield Main Rd<br/>Opp. CSI Church, Sathya Sai Layout</p>
+              <p className="text-sm mb-2">Ground Floor, 1, Whitefield Main Rd<br/>Opp. CSI Church, Sathya Sai Layout<br/>Bengaluru 560066</p>
               <p className="text-sm font-semibold">📞 08147 006341</p>
-              <p className="text-xs mt-2">24/7 Emergency Available</p>
+              <p className="text-xs mt-2 font-semibold text-yellow-300">✓ 24/7 Emergency Pet Care</p>
             </div>
           </div>
         </div>

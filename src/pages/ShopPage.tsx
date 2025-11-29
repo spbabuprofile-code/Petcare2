@@ -43,8 +43,8 @@ export function ShopPage() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-primary text-white py-12">
         <div className="section-container">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Pet Food & Supplies</h1>
-          <p className="text-xl">Premium quality products delivered to your doorstep in 3 hours</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Premium Pet Food & Accessories</h1>
+          <p className="text-xl">Veterinary-recommended dog and cat food, treats, supplements & supplies for Bangalore pet parents</p>
         </div>
       </div>
 
@@ -52,7 +52,7 @@ export function ShopPage() {
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-1">
             <Card>
-              <h3 className="text-xl font-semibold mb-4">Filters</h3>
+              <h3 className="text-xl font-semibold mb-4">Filter Products</h3>
 
               <div className="mb-6">
                 <h4 className="font-medium mb-2">Pet Type</h4>
@@ -66,14 +66,14 @@ export function ShopPage() {
                         onChange={() => setPetTypeFilter(type)}
                         className="mr-2"
                       />
-                      <span className="capitalize">{type === 'all' ? 'All' : type}</span>
+                      <span className="capitalize">{type === 'all' ? 'All Pets' : type === 'dog' ? 'Dogs' : 'Cats'}</span>
                     </label>
                   ))}
                 </div>
               </div>
 
               <div className="mb-6">
-                <h4 className="font-medium mb-2">Category</h4>
+                <h4 className="font-medium mb-2">Product Category</h4>
                 <div className="space-y-2">
                   {['all', 'food', 'treats', 'supplements', 'accessories'].map((cat) => (
                     <label key={cat} className="flex items-center">
@@ -84,7 +84,7 @@ export function ShopPage() {
                         onChange={() => setCategoryFilter(cat)}
                         className="mr-2"
                       />
-                      <span className="capitalize">{cat}</span>
+                      <span className="capitalize">{cat === 'all' ? 'All Categories' : cat === 'food' ? 'Pet Food' : cat === 'treats' ? 'Pet Treats' : cat === 'supplements' ? 'Pet Supplements' : 'Pet Accessories'}</span>
                     </label>
                   ))}
                 </div>
@@ -94,13 +94,13 @@ export function ShopPage() {
 
           <div className="lg:col-span-3">
             <div className="mb-6 flex justify-between items-center">
-              <p className="text-text-secondary">{filteredProducts.length} products found</p>
+              <p className="text-text-secondary">{filteredProducts.length} pet products available</p>
             </div>
 
             {filteredProducts.length === 0 ? (
               <div className="text-center py-16">
-                <p className="text-xl text-text-secondary mb-4">No products found</p>
-                <p className="text-text-light">Try adjusting your filters</p>
+                <p className="text-xl text-text-secondary mb-4">No pet products found</p>
+                <p className="text-text-light">Try adjusting your filters or browse all categories</p>
               </div>
             ) : (
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
