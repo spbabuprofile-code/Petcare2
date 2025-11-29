@@ -44,20 +44,28 @@ export function ClinicsPage() {
                   alt={`${clinic.name} - V-Care Pet Polyclinic`}
                   className="w-full h-48 object-cover rounded-lg mb-4"
                 />
-                <h3 className="text-xl font-bold mb-3">{clinic.name.replace('V-Care Pet Polyclinic - ', '')} Pet Hospital</h3>
-                <div className="space-y-2 mb-4">
-                  <p className="text-sm text-text-secondary flex items-start">
-                    <span className="mr-2 mt-0.5">📍</span>
-                    <span>
-                      {clinic.name.includes('Kaikondrahalli') && '65/1C, Sarjapur – Marathahalli Rd, Next to Jain Heights, Kaikondrahalli, Bengaluru 560035'}
-                      {clinic.name.includes('Koramangala') && '1st Main Cross, Jakkasandra, 1st Block, Koramangala, Bengaluru 560034'}
-                      {clinic.name.includes('Whitefield') && 'Ground Floor, 1, Whitefield Main Rd, Opp. CSI Church, Sathya Sai Layout, Bengaluru 560066'}
-                    </span>
-                  </p>
-                  <p className="text-sm font-semibold text-primary flex items-center">
-                    <span className="mr-2">📞</span>
-                    {clinic.name.includes('Kaikondrahalli') ? '08147 006345' : clinic.name.includes('Koramangala') ? '080 2552 5834' : '08147 006341'}
-                  </p>
+                <h3 className="text-xl font-bold mb-3">{clinic.name.replace('V-Care Pet Polyclinic - ', '')}</h3>
+                <div className="space-y-3 mb-4">
+                  <div className="text-sm text-text-secondary">
+                    {clinic.name.includes('Kaikondrahalli') && (
+                      <>
+                        <p className="leading-relaxed">65/1C, Sarjapur – Marathahalli Rd, Next to Jain Heights, Kaikondrahalli, Bengaluru 560035</p>
+                        <p className="font-semibold text-primary mt-2">📞 08147 006345</p>
+                      </>
+                    )}
+                    {clinic.name.includes('Koramangala') && (
+                      <>
+                        <p className="leading-relaxed">1st Main Cross, Jakkasandra, 1st Block, Koramangala, Bengaluru 560034</p>
+                        <p className="font-semibold text-primary mt-2">📞 080 2552 5834</p>
+                      </>
+                    )}
+                    {clinic.name.includes('Whitefield') && (
+                      <>
+                        <p className="leading-relaxed">Ground Floor, 1, Whitefield Main Rd, Opp. CSI Church, Sathya Sai Layout, Whitefield, Bengaluru 560066</p>
+                        <p className="font-semibold text-primary mt-2">📞 08147 006341</p>
+                      </>
+                    )}
+                  </div>
                   <p className="text-sm text-text-secondary flex items-center">
                     <span className="mr-2">🕒</span>
                     {clinic.is_24x7 ? '24/7 Open - Round-the-clock Emergency Care' : 'Mon-Sun: 9:00 AM - 9:00 PM'}
