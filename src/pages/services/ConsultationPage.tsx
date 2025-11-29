@@ -36,7 +36,7 @@ export function ConsultationPage() {
             </div>
             <div className="hidden lg:block">
               <img
-                src="https://images.pexels.com/photos/6234525/pexels-photo-6234525.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/8.jpg"
                 alt="Veterinarian with dog"
                 className="rounded-xl shadow-lg w-full h-auto object-cover"
               />
@@ -53,7 +53,7 @@ export function ConsultationPage() {
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <Card className="overflow-hidden">
             <img
-              src="https://images.pexels.com/photos/6234525/pexels-photo-6234525.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/9.jpg"
               alt="Experienced, Multi-Speciality Vets"
               className="w-full h-64 object-cover"
             />
@@ -67,7 +67,7 @@ export function ConsultationPage() {
 
           <Card className="overflow-hidden">
             <img
-              src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/10.jpg"
               alt="Advanced Medical Facilities"
               className="w-full h-64 object-cover"
             />
@@ -83,7 +83,7 @@ export function ConsultationPage() {
         <div className="grid md:grid-cols-3 gap-8">
           <Card className="overflow-hidden">
             <img
-              src="https://images.pexels.com/photos/6234526/pexels-photo-6234526.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/11.jpg"
               alt="24/7 Veterinarian Availability"
               className="w-full h-64 object-cover"
             />
@@ -97,7 +97,7 @@ export function ConsultationPage() {
 
           <Card className="overflow-hidden">
             <img
-              src="https://images.pexels.com/photos/7210344/pexels-photo-7210344.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/12.jpg"
               alt="Specialised Care"
               className="w-full h-64 object-cover"
             />
