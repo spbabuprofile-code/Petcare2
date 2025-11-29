@@ -83,13 +83,13 @@ export function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <button
                   onClick={() => navigate('/book-appointment')}
-                  className="bg-primary hover:bg-[#E55A2A] text-white px-8 py-3.5 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+                  className="bg-primary hover:bg-[#E55A2A] text-white px-6 py-3.5 rounded-lg font-semibold text-base sm:text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
                 >
                   Book Veterinary Appointment
                 </button>
                 <button
                   onClick={() => navigate('/shop')}
-                  className="bg-white border-2 border-primary text-primary hover:bg-orange-50 px-8 py-3.5 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+                  className="bg-white border-2 border-primary text-primary hover:bg-orange-50 px-6 py-3.5 rounded-lg font-semibold text-base sm:text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
                 >
                   Shop Premium Pet Food
                 </button>
