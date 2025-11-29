@@ -1,9 +1,6 @@
 import { Card } from '../components/common/Card';
-import { Button } from '../components/common/Button';
-import { useNavigate } from 'react-router-dom';
 
 export function AboutPage() {
-  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen">
@@ -89,18 +86,6 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="section-container">
-        <div className="bg-gradient-to-r from-orange-50 to-blue-50 rounded-2xl p-12 text-center">
-          <h2 className="text-3xl font-bold mb-4">Join Our Growing Family</h2>
-          <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
-            Experience the difference that compassionate, professional pet care can make.
-            Book your first appointment today!
-          </p>
-          <Button onClick={() => navigate('/book-appointment')}>
-            Book Appointment Now
-          </Button>
-        </div>
-      </section>
 
       <section className="section-container">
         <h2 className="text-3xl font-bold text-center mb-12">Our Bangalore Locations</h2>

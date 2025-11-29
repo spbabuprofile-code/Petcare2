@@ -80,14 +80,6 @@ export function HomePage() {
               <p className="text-xl text-text-secondary mb-8">
                 Advanced veterinary medicine meets compassionate care. Providing comprehensive healthcare services for dogs and cats across Bangalore with state-of-the-art facilities and experienced veterinary specialists.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={() => navigate('/book-appointment')}>
-                  Book Veterinary Appointment
-                </Button>
-                <Button variant="secondary" onClick={() => navigate('/shop')}>
-                  Shop Premium Pet Food
-                </Button>
-              </div>
               <div className="mt-8 flex items-center space-x-6">
                 <div className="flex items-center">
                   <span className="text-2xl font-bold text-primary">4.9</span>
@@ -182,9 +174,6 @@ export function HomePage() {
             <Card key={service.name}>
               <h3 className="text-lg font-semibold mb-2">{service.name}</h3>
               <p className="text-primary font-bold text-lg">{service.price}</p>
-              <Button className="mt-4" fullWidth onClick={() => navigate('/book-appointment')}>
-                Book Now
-              </Button>
             </Card>
           ))}
         </div>
@@ -241,9 +230,6 @@ export function HomePage() {
               <p className="text-text-secondary text-sm">{post.readTime} min read</p>
             </Card>
           ))}
-        </div>
-        <div className="text-center mt-8">
-          <Button onClick={() => navigate('/blog')}>View All Articles</Button>
         </div>
       </section>
 

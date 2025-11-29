@@ -1,15 +1,12 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import { Card } from '../components/common/Card';
-import { Button } from '../components/common/Button';
-import { useCart } from '../contexts/CartContext';
 
 export function ShopPage() {
   const [products, setProducts] = useState<any[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
   const [petTypeFilter, setPetTypeFilter] = useState('all');
   const [categoryFilter, setCategoryFilter] = useState('all');
-  const { addToCart } = useCart();
 
   useEffect(() => {
     loadProducts();
@@ -41,17 +38,6 @@ export function ShopPage() {
     setFilteredProducts(filtered);
   };
 
-  const handleAddToCart = (product: any) => {
-    addToCart({
-      product_id: product.product_id,
-      name: product.name,
-      brand: product.brand,
-      price: product.price,
-      quantity: 1,
-      image: product.images[0] || '',
-      weight: product.weight,
-    });
-  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -136,13 +122,6 @@ export function ShopPage() {
                         <span className="text-sm text-red-500">Out of Stock</span>
                       )}
                     </div>
-                    <Button
-                      fullWidth
-                      onClick={() => handleAddToCart(product)}
-                      disabled={product.stock === 0}
-                    >
-                      Add to Cart
-                    </Button>
                   </Card>
                 ))}
               </div>

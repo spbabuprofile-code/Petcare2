@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { Card } from '../components/common/Card';
-import { Button } from '../components/common/Button';
 
 export function ClinicsPage() {
-  const navigate = useNavigate();
   const [clinics, setClinics] = useState<any[]>([]);
 
   useEffect(() => {
@@ -82,9 +79,6 @@ export function ClinicsPage() {
                   )}
                 </div>
               </div>
-              <Button fullWidth onClick={() => navigate('/book-appointment')}>
-                Book Appointment
-              </Button>
             </Card>
           ))}
         </div>
