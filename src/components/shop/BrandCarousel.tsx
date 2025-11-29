@@ -11,24 +11,26 @@ export function BrandCarousel() {
   }, []);
 
   useEffect(() => {
-    if (brands.length > 0 && isAnimating) {
+    if (brands.length > 0) {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => {
+          const uniqueBrandCount = brands.length / 3;
           const next = prevIndex + 1;
-          if (next >= brands.length / 2) {
+
+          if (next >= uniqueBrandCount) {
+            setIsAnimating(false);
             setTimeout(() => {
-              setIsAnimating(false);
               setCurrentIndex(0);
               setTimeout(() => setIsAnimating(true), 50);
-            }, 700);
-            return next;
+            }, 0);
+            return prevIndex;
           }
           return next;
         });
       }, 3000);
       return () => clearInterval(interval);
     }
-  }, [brands.length, isAnimating]);
+  }, [brands.length]);
 
   const loadBrands = async () => {
     const { data } = await supabase
@@ -37,7 +39,8 @@ export function BrandCarousel() {
       .eq('is_featured', true)
       .order('display_order');
     if (data && data.length > 0) {
-      setBrands([...data, ...data, ...data]);
+      const duplicatedBrands = [...data, ...data, ...data];
+      setBrands(duplicatedBrands);
     }
   };
 
@@ -66,18 +69,15 @@ export function BrandCarousel() {
               {brands.map((brand, index) => (
                 <div
                   key={`${brand.brand_id}-${index}`}
-                  className="flex-shrink-0 w-48 h-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden group cursor-pointer"
+                  className="flex-shrink-0 w-52 h-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden group cursor-pointer"
                 >
-                  {brand.product_image_url ? (
-                    <div className="relative w-full h-full">
+                  {brand.logo_image_url ? (
+                    <div className="relative w-full h-full p-6 flex items-center justify-center">
                       <img
-                        src={brand.product_image_url}
-                        alt={brand.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        src={brand.logo_image_url}
+                        alt={`${brand.name} logo`}
+                        className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-4">
-                        <p className="font-bold text-white text-lg drop-shadow-lg">{brand.name}</p>
-                      </div>
                     </div>
                   ) : (
                     <div className="w-full h-full flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
