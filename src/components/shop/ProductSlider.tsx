@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { supabase } from '../../lib/supabase';
 import { Card } from '../common/Card';
 import { Button } from '../common/Button';
@@ -8,19 +8,20 @@ export function ProductSlider() {
   const [products, setProducts] = useState<any[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const { addToCart } = useCart();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     loadTopSellingProducts();
   }, []);
 
   useEffect(() => {
-    if (products.length > 3) {
+    if (products.length > 0) {
       const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % (products.length - 2));
+        handleNext();
       }, 4000);
       return () => clearInterval(interval);
     }
-  }, [products.length]);
+  }, [products.length, currentIndex]);
 
   const loadTopSellingProducts = async () => {
     const { data } = await supabase
@@ -34,7 +35,13 @@ export function ProductSlider() {
     }
   };
 
-  const visibleProducts = products.slice(currentIndex, currentIndex + 3);
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % products.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + products.length) % products.length);
+  };
 
   const handleAddToCart = (product: any) => {
     const discountedPrice = product.discount_percentage > 0
@@ -53,64 +60,94 @@ export function ProductSlider() {
   };
 
   return (
-    <div className="bg-gray-50 py-12">
+    <div className="bg-white py-16">
       <div className="section-container">
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-              Top Selling Products 🔥
-            </h2>
-            <p className="text-gray-600">
-              Discover What Best Sellers Your Pet Would Adore 😍😍
-            </p>
-          </div>
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+            Top Selling Products 🔥
+          </h2>
+          <p className="text-gray-600 text-lg">
+            Discover What Best Sellers Your Pet Would Adore 😍😍
+          </p>
         </div>
 
-        <div className="overflow-hidden">
-          <div className="grid md:grid-cols-3 gap-6">
-            {visibleProducts.map((product) => {
-              const discountedPrice = product.discount_percentage > 0
-                ? product.price - (product.price * product.discount_percentage / 100)
-                : product.price;
+        <div className="relative">
+          <button
+            onClick={handlePrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all"
+            aria-label="Previous products"
+          >
+            <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
 
-              return (
-                <Card key={product.product_id} className="hover:shadow-lg transition-shadow">
-                  <img
-                    src={product.images[0]}
-                    alt={product.name}
-                    className="w-full h-48 object-cover rounded-lg mb-4"
-                  />
-                  <h3 className="font-bold text-lg mb-2 text-gray-900">{product.name}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{product.brand}</p>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="text-2xl font-bold text-primary">₹{Math.round(discountedPrice)}</span>
-                      {product.discount_percentage > 0 && (
-                        <span className="text-sm text-gray-400 line-through ml-2">₹{product.price}</span>
-                      )}
+          <button
+            onClick={handleNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all"
+            aria-label="Next products"
+          >
+            <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          <div className="overflow-hidden px-12">
+            <div
+              ref={scrollContainerRef}
+              className="flex transition-transform duration-500 ease-in-out gap-6"
+              style={{
+                transform: `translateX(-${currentIndex * (100 / 3)}%)`,
+              }}
+            >
+              {products.map((product) => {
+                const discountedPrice = product.discount_percentage > 0
+                  ? product.price - (product.price * product.discount_percentage / 100)
+                  : product.price;
+
+                return (
+                  <Card
+                    key={product.product_id}
+                    className="flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] hover:shadow-xl transition-shadow"
+                  >
+                    <img
+                      src={product.images[0]}
+                      alt={product.name}
+                      className="w-full h-56 object-cover rounded-lg mb-4"
+                    />
+                    <h3 className="font-bold text-xl mb-2 text-gray-900 line-clamp-2">{product.name}</h3>
+                    <p className="text-sm text-gray-600 mb-4">{product.brand}</p>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <span className="text-2xl font-bold text-primary">₹{Math.round(discountedPrice)}</span>
+                        {product.discount_percentage > 0 && (
+                          <span className="text-sm text-gray-400 line-through ml-2">₹{product.price}</span>
+                        )}
+                      </div>
+                      <Button
+                        variant="primary"
+                        onClick={() => handleAddToCart(product)}
+                        className="bg-black text-white px-5 py-2.5 rounded-lg hover:bg-gray-800 transition-colors text-sm font-semibold"
+                      >
+                        Order Now
+                      </Button>
                     </div>
-                    <Button
-                      variant="primary"
-                      onClick={() => handleAddToCart(product)}
-                      className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm"
-                    >
-                      Order Now
-                    </Button>
-                  </div>
-                </Card>
-              );
-            })}
+                  </Card>
+                );
+              })}
+            </div>
           </div>
         </div>
 
-        <div className="flex justify-center mt-6 gap-2">
-          {Array.from({ length: Math.max(1, products.length - 2) }).map((_, index) => (
+        <div className="flex justify-center mt-8 gap-2">
+          {products.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                index === currentIndex ? 'bg-primary' : 'bg-gray-300'
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                index === currentIndex ? 'bg-primary w-8' : 'bg-gray-300 hover:bg-gray-400'
               }`}
+              aria-label={`Go to product ${index + 1}`}
             />
           ))}
         </div>
