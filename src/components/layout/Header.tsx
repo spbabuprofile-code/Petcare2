@@ -4,7 +4,6 @@ import { useAuth } from '../../contexts/AuthContext';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMedicalCareOpen, setIsMedicalCareOpen] = useState(false);
   const [isOurServicesOpen, setIsOurServicesOpen] = useState(false);
   const { user, signOut } = useAuth();
 
@@ -34,41 +33,9 @@ export function Header() {
               Grooming
             </Link>
 
-            <div className="relative group">
-              <button
-                className="text-text-primary hover:text-primary font-semibold text-lg transition-colors"
-                onMouseEnter={() => setIsMedicalCareOpen(true)}
-                onMouseLeave={() => setIsMedicalCareOpen(false)}
-              >
-                Medical Care
-              </button>
-              {isMedicalCareOpen && (
-                <div
-                  className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg py-2 border border-gray-100"
-                  onMouseEnter={() => setIsMedicalCareOpen(true)}
-                  onMouseLeave={() => setIsMedicalCareOpen(false)}
-                >
-                  <Link to="/services/consultation" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
-                    Veterinary Consultation
-                  </Link>
-                  <Link to="/services/surgery" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
-                    Surgery & Orthopedics
-                  </Link>
-                  <Link to="/services/diagnostics" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
-                    Diagnostics & Radiology
-                  </Link>
-                  <Link to="/services/dental" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
-                    Dental Care
-                  </Link>
-                  <Link to="/services/vaccination" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
-                    Vaccination Programs
-                  </Link>
-                  <Link to="/services/emergency" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
-                    24/7 Emergency Care
-                  </Link>
-                </div>
-              )}
-            </div>
+            <Link to="/services/consultation" className="text-text-primary hover:text-primary font-semibold text-lg transition-colors">
+              Medical Care
+            </Link>
 
             <Link to="/shop" className="text-text-primary hover:text-primary font-semibold text-lg transition-colors">
               Food & Accessories
@@ -190,21 +157,13 @@ export function Header() {
                 Grooming
               </Link>
 
-              <div className="py-2">
-                <p className="text-sm font-semibold text-gray-500 px-2 mb-2">Medical Care</p>
-                <Link to="/services/consultation" className="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  Veterinary Consultation
-                </Link>
-                <Link to="/services/surgery" className="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  Surgery & Orthopedics
-                </Link>
-                <Link to="/services/diagnostics" className="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  Diagnostics
-                </Link>
-                <Link to="/services/emergency" className="block py-2 px-4 text-text-secondary hover:text-primary hover:bg-gray-50 rounded transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  Emergency Care
-                </Link>
-              </div>
+              <Link
+                to="/services/consultation"
+                className="text-text-primary hover:text-primary font-semibold py-2 px-2 rounded hover:bg-gray-50 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Medical Care
+              </Link>
 
               <Link
                 to="/shop"
