@@ -13,7 +13,7 @@ export function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center flex-shrink-0">
             <img
               src="/image copy copy copy.png"
               alt="V-Care Pet Polyclinic"
@@ -21,34 +21,33 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center space-x-10">
-            <Link to="/" className="text-text-primary hover:text-primary font-semibold text-lg transition-colors">
-              Home
-            </Link>
-            <Link to="/about" className="text-text-primary hover:text-primary font-semibold text-lg transition-colors">
-              About Us
-            </Link>
-            <Link to="/clinics" className="text-text-primary hover:text-primary font-semibold text-lg transition-colors">
-              Our Clinics
-            </Link>
-            <Link to="/services/grooming" className="text-text-primary hover:text-primary font-semibold text-lg transition-colors">
-              Grooming
-            </Link>
-
-            <Link to="/services/consultation" className="text-text-primary hover:text-primary font-semibold text-lg transition-colors">
-              Medical Care
-            </Link>
-
-            <Link to="/shop" className="text-text-primary hover:text-primary font-semibold text-lg transition-colors">
-              Food & Accessories
-            </Link>
-
-            <Link to="/services" className="text-text-primary hover:text-primary font-semibold text-lg transition-colors">
-              Our Services
-            </Link>
+          <nav className="hidden lg:flex items-center justify-center flex-1 mx-8">
+            <div className="flex items-center space-x-8">
+              <Link to="/" className="text-text-primary hover:text-primary font-semibold text-base transition-colors whitespace-nowrap">
+                Home
+              </Link>
+              <Link to="/about" className="text-text-primary hover:text-primary font-semibold text-base transition-colors whitespace-nowrap">
+                About Us
+              </Link>
+              <Link to="/clinics" className="text-text-primary hover:text-primary font-semibold text-base transition-colors whitespace-nowrap">
+                Our Clinics
+              </Link>
+              <Link to="/services/grooming" className="text-text-primary hover:text-primary font-semibold text-base transition-colors whitespace-nowrap">
+                Grooming
+              </Link>
+              <Link to="/services/consultation" className="text-text-primary hover:text-primary font-semibold text-base transition-colors whitespace-nowrap">
+                Medical Care
+              </Link>
+              <Link to="/shop" className="text-text-primary hover:text-primary font-semibold text-base transition-colors whitespace-nowrap">
+                Food & Accessories
+              </Link>
+              <Link to="/services" className="text-text-primary hover:text-primary font-semibold text-base transition-colors whitespace-nowrap">
+                Our Services
+              </Link>
+            </div>
           </nav>
 
-          <div className="hidden lg:flex items-center space-x-3">
+          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <Link to="/cart" className="relative p-2 hover:bg-gray-100 rounded-lg transition-colors">
               <ShoppingCart className="w-6 h-6 text-text-primary" />
               {totalItems > 0 && (
@@ -59,7 +58,7 @@ export function Header() {
             </Link>
             {user ? (
               <div className="relative group">
-                <button className="w-10 h-10 rounded-full bg-primary text-white font-semibold flex items-center justify-center hover:bg-blue-600 transition-colors">
+                <button className="w-12 h-12 rounded-full bg-primary text-white font-bold flex items-center justify-center hover:bg-blue-600 transition-colors text-base">
                   {user.email?.substring(0, 2).toUpperCase() || 'U'}
                 </button>
                 <div className="absolute right-0 top-full mt-2 w-52 bg-white shadow-lg rounded-lg py-2 border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
@@ -87,15 +86,15 @@ export function Header() {
                 </div>
               </div>
             ) : (
-              <Link to="/login">
-                <button className="px-6 py-2.5 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+              <Link to="/login" className="block">
+                <button className="h-12 px-8 border-2 border-primary text-primary rounded-lg font-bold hover:bg-blue-50 transition-colors text-base whitespace-nowrap">
                   Login
                 </button>
               </Link>
             )}
           </div>
 
-          <div className="lg:hidden flex items-center space-x-2">
+          <div className="lg:hidden flex items-center gap-2">
             <Link to="/cart" className="relative p-2 hover:bg-gray-100 rounded-lg transition-colors">
               <ShoppingCart className="w-6 h-6 text-text-primary" />
               {totalItems > 0 && (
@@ -105,10 +104,11 @@ export function Header() {
               )}
             </Link>
             <button
-              className="p-2"
+              className="p-2 touch-manipulation"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
             >
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-7 h-7 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
