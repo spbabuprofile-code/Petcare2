@@ -10,27 +10,27 @@ const categories: Category[] = [
   {
     name: 'food',
     label: 'Dog Food',
-    image: 'https://images.pexels.com/photos/5732444/pexels-photo-5732444.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: '/1-use.jpeg',
   },
   {
     name: 'treats',
     label: 'Dog Treat',
-    image: 'https://images.pexels.com/photos/4601196/pexels-photo-4601196.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: '/6-use.jpeg',
   },
   {
     name: 'food',
     label: 'Cat Food',
-    image: 'https://images.pexels.com/photos/1440387/pexels-photo-1440387.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: '/4-use.jpeg',
   },
   {
     name: 'treats',
     label: 'Cat Treat',
-    image: 'https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: '/2-use.jpeg',
   },
   {
     name: 'accessories',
     label: 'Toys & Accessories',
-    image: 'https://images.pexels.com/photos/1458901/pexels-photo-1458901.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: '/3-use.jpeg',
   },
   {
     name: 'all',
