@@ -7,7 +7,7 @@ const services = [
     id: 1,
     title: 'General Care & Veterinary Consultation',
     description: 'Our experienced vets provide routine health check-ups, treatment for illnesses, and personalized care to ensure your pet stays in the best health.',
-    image: '/1.jpg',
+    image: '/14.jpg',
     link: '/services/consultation',
     features: [
       'Comprehensive Health Check-ups',
@@ -21,7 +21,7 @@ const services = [
     id: 2,
     title: 'Vaccination',
     description: 'Timely reminder and internationally recognised vaccines for your pet\'s protection. Book from the app for consultation within 18 seconds.',
-    image: '/3.jpg',
+    image: '/15.jpg',
     link: '/services/vaccination',
     features: [
       'Puppy & Kitten Vaccination',
@@ -34,7 +34,7 @@ const services = [
     id: 3,
     title: 'In-House Diagnostics',
     description: 'Accurate blood, biochemistry and imaging tests provide insights into your pet\'s health, helping diagnose issues with a range of conditions.',
-    image: '/4.jpg',
+    image: '/16.jpg',
     link: '/services/diagnostics',
     features: [
       'Blood Tests',
@@ -49,7 +49,7 @@ const services = [
     id: 4,
     title: 'Surgery',
     description: 'We have cutting-edge and sterile surgical capacity and technology. Our team of vets has the leading veterinary surgeons and veterinary support staff.',
-    image: '/5.jpg',
+    image: '/17.jpg',
     link: '/services/surgery',
     features: [
       'Elective Surgery',
@@ -64,7 +64,7 @@ const services = [
     id: 5,
     title: 'Pet Physiotherapy',
     description: 'Our physiotherapy services help your pet with mobility issues, helping them recover from surgery, injury or illness.',
-    image: '/6.jpg',
+    image: '/18.jpg',
     link: '/services/physiotherapy',
     features: [
       'Post-surgery recovery',
