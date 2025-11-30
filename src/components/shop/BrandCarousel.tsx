@@ -24,21 +24,41 @@ const petBrands = [
   },
   {
     id: 5,
+    name: "Purina",
+    logo: "/purina.png"
+  },
+  {
+    id: 6,
+    name: "Sheba",
+    logo: "/sheb_use.png"
+  },
+  {
+    id: 7,
+    name: "IAMS",
+    logo: "/IAMS.png"
+  },
+  {
+    id: 8,
+    name: "Hill's Science Diet",
+    logo: "/hills.png"
+  },
+  {
+    id: 9,
     name: "Royal Canin",
     logo: "/Royal.png"
   },
   {
-    id: 6,
+    id: 10,
     name: "Pedigree",
     logo: "/Pedigree.png"
   },
   {
-    id: 7,
+    id: 11,
     name: "Whiskas",
     logo: "/whisk.png"
   },
   {
-    id: 8,
+    id: 12,
     name: "Drools",
     logo: "/drool.png"
   }
