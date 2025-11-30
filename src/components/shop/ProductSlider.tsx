@@ -1,12 +1,22 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const topProducts = [
+interface Product {
+  id: number;
+  name: string;
+  brand: string;
+  image: string;
+  price: number;
+  originalPrice: number | null;
+  weight: string;
+}
+
+const topProducts: Product[] = [
   {
     id: 1,
     name: "Purina ONE +Plus Vibrant Maturity Adult 7+ Formula",
     brand: "PURINA",
-    image: "/2.jpeg",
+    image: "/1.jpeg",
     price: 6886,
     originalPrice: null,
     weight: "16.5 lbs (approx. 7.5 kg)"
@@ -15,7 +25,7 @@ const topProducts = [
     id: 2,
     name: "Pedigree Puppy Dry Dog Food – Meat & Milk",
     brand: "PEDIGREE",
-    image: "/3.jpeg",
+    image: "/2 copy.jpeg",
     price: 3605,
     originalPrice: null,
     weight: "20 kg"
@@ -24,7 +34,7 @@ const topProducts = [
     id: 3,
     name: "Meat Up 100% Vegetarian Adult Dry Dog Food",
     brand: "MEAT UP",
-    image: "/4.jpeg",
+    image: "/3 copy.jpeg",
     price: 718,
     originalPrice: null,
     weight: "3 kg"
@@ -33,64 +43,19 @@ const topProducts = [
     id: 4,
     name: "Kennel Kitchen Chicken Chunks in Gravy Wet Dog Food",
     brand: "KENNEL KITCHEN",
-    image: "/image copy copy copy copy copy copy.png",
+    image: "/4 copy.jpeg",
     price: 45,
     originalPrice: null,
     weight: "100 g"
   },
   {
     id: 5,
-    name: "Royal Canin Medium Adult Dog Food",
-    brand: "ROYAL CANIN",
-    image: "https://m.media-amazon.com/images/I/71VHFGvRHJL._AC_SL1500_.jpg",
-    price: 2848,
-    originalPrice: 3200,
-    weight: "10 kg"
-  },
-  {
-    id: 6,
-    name: "Pedigree Adult Dry Dog Food Chicken & Vegetables",
-    brand: "PEDIGREE",
-    image: "https://m.media-amazon.com/images/I/71s7NZtDVlL._AC_SL1500_.jpg",
-    price: 1653,
-    originalPrice: 1900,
-    weight: "10 kg"
-  },
-  {
-    id: 7,
-    name: "Whiskas Adult Cat Food Ocean Fish",
-    brand: "WHISKAS",
-    image: "https://m.media-amazon.com/images/I/81ZC2vJLCfL._AC_SL1500_.jpg",
-    price: 765,
-    originalPrice: 850,
-    weight: "3 kg"
-  },
-  {
-    id: 8,
-    name: "Drools Chicken & Egg Adult Dog Food",
-    brand: "DROOLS",
-    image: "https://m.media-amazon.com/images/I/71kLfT8CSXL._AC_SL1500_.jpg",
-    price: 1899,
-    originalPrice: 2150,
-    weight: "10 kg"
-  },
-  {
-    id: 9,
-    name: "Purina Pro Plan Adult Dog Food",
-    brand: "PURINA",
-    image: "https://m.media-amazon.com/images/I/81RCvGnMEpL._AC_SL1500_.jpg",
-    price: 3250,
-    originalPrice: 3600,
-    weight: "14 kg"
-  },
-  {
-    id: 10,
-    name: "Sheba Premium Wet Cat Food Variety Pack",
-    brand: "SHEBA",
-    image: "https://m.media-amazon.com/images/I/71hNxLT4pxL._AC_SL1500_.jpg",
-    price: 202,
-    originalPrice: 238,
-    weight: "12 × 85g"
+    name: "IAMS Proactive Health Small Breed Chicken & Whole Grain Recipe dry dog food.",
+    brand: "IAMS",
+    image: "/5.jpeg",
+    price: 2204,
+    originalPrice: null,
+    weight: "3.18 Kg"
   }
 ];
 
@@ -102,7 +67,7 @@ export function ProductSlider() {
     if (!isPaused) {
       const interval = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % topProducts.length);
-      }, 4000);
+      }, 3500);
       return () => clearInterval(interval);
     }
   }, [isPaused]);
