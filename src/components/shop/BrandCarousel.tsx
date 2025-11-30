@@ -44,21 +44,31 @@ const petBrands = [
   },
   {
     id: 9,
+    name: "MeatUp",
+    logo: "/meatup.png"
+  },
+  {
+    id: 10,
+    name: "Kennel Kitchen",
+    logo: "/Kennel.png"
+  },
+  {
+    id: 11,
     name: "Royal Canin",
     logo: "/Royal.png"
   },
   {
-    id: 10,
+    id: 12,
     name: "Pedigree",
     logo: "/Pedigree.png"
   },
   {
-    id: 11,
+    id: 13,
     name: "Whiskas",
     logo: "/whisk.png"
   },
   {
-    id: 12,
+    id: 14,
     name: "Drools",
     logo: "/drool.png"
   }
