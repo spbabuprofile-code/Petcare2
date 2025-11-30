@@ -16,7 +16,7 @@ const topProducts: Product[] = [
     id: 1,
     name: "Purina ONE +Plus Vibrant Maturity Adult 7+ Formula",
     brand: "PURINA",
-    image: "/1.jpeg",
+    image: "/4 copy copy copy.jpeg",
     price: 6886,
     originalPrice: null,
     weight: "16.5 lbs (approx. 7.5 kg)"
@@ -25,7 +25,7 @@ const topProducts: Product[] = [
     id: 2,
     name: "Pedigree Puppy Dry Dog Food – Meat & Milk",
     brand: "PEDIGREE",
-    image: "/2 copy.jpeg",
+    image: "/3 copy copy copy.jpeg",
     price: 3605,
     originalPrice: null,
     weight: "20 kg"
@@ -34,7 +34,7 @@ const topProducts: Product[] = [
     id: 3,
     name: "Meat Up 100% Vegetarian Adult Dry Dog Food",
     brand: "MEAT UP",
-    image: "/3 copy.jpeg",
+    image: "/2 copy copy copy.jpeg",
     price: 718,
     originalPrice: null,
     weight: "3 kg"
@@ -43,7 +43,7 @@ const topProducts: Product[] = [
     id: 4,
     name: "Kennel Kitchen Chicken Chunks in Gravy Wet Dog Food",
     brand: "KENNEL KITCHEN",
-    image: "/4 copy.jpeg",
+    image: "/1 copy copy.jpeg",
     price: 45,
     originalPrice: null,
     weight: "100 g"
