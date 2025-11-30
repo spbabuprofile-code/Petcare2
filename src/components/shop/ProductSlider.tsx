@@ -127,10 +127,10 @@ export function ProductSlider() {
       aria-label="Top selling products carousel"
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-3 text-gray-900">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-gray-900">
           Top Selling Products 🔥
         </h2>
-        <p className="text-gray-600 mb-12 text-lg">
+        <p className="text-gray-600 mb-8 sm:mb-12 text-base sm:text-lg">
           Discover What Best Sellers Your Pet Would Adore 😍😍
         </p>
 
@@ -161,15 +161,15 @@ export function ProductSlider() {
                   return (
                     <div
                       key={product.id}
-                      className="flex-shrink-0 px-3 transition-all duration-700"
+                      className="flex-shrink-0 px-2 sm:px-3 transition-all duration-700"
                       style={{
                         width: '25%',
-                        minWidth: '300px',
+                        minWidth: '280px',
                         opacity,
                         transform: `scale(${scale})`
                       }}
                     >
-                      <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl p-6 border border-gray-200 transition-all duration-300 hover:border-blue-200 h-full flex flex-col">
+                      <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl p-4 sm:p-6 border border-gray-200 transition-all duration-300 hover:border-blue-200 h-full flex flex-col">
                         <span className="inline-block bg-blue-500 text-white px-4 py-1.5 rounded-full text-sm font-bold mb-4 self-start">
                           Now
                         </span>

@@ -97,8 +97,8 @@ export function ShopPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="relative bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 overflow-hidden">
-        <div className="section-container py-20 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+        <div className="section-container py-12 sm:py-16 md:py-20 text-center px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
             <span className="text-primary">Your Pet's Favourite Food</span>
             <br />
             <span className="text-gray-900">Delivered in Just 2 Hours!</span>
@@ -106,7 +106,7 @@ export function ShopPage() {
           <Button
             variant="primary"
             onClick={() => setShowProductModal(true)}
-            className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors mt-4"
+            className="bg-black text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg hover:bg-gray-800 transition-colors mt-4 text-sm sm:text-base"
           >
             Order Now
           </Button>

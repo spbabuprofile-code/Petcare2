@@ -48,7 +48,7 @@ export function Header() {
             </Link>
           </nav>
 
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-3">
             <Link to="/cart" className="relative p-2 hover:bg-gray-100 rounded-lg transition-colors">
               <ShoppingCart className="w-6 h-6 text-text-primary" />
               {totalItems > 0 && (
@@ -57,12 +57,15 @@ export function Header() {
                 </span>
               )}
             </Link>
-            {user && (
+            {user ? (
               <div className="relative group">
-                <button className="px-6 py-2.5 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                  Account
+                <button className="w-10 h-10 rounded-full bg-primary text-white font-semibold flex items-center justify-center hover:bg-blue-600 transition-colors">
+                  {user.email?.substring(0, 2).toUpperCase() || 'U'}
                 </button>
-                <div className="absolute right-0 top-full mt-2 w-52 bg-white shadow-lg rounded-lg py-2 border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                <div className="absolute right-0 top-full mt-2 w-52 bg-white shadow-lg rounded-lg py-2 border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                  <div className="px-4 py-2 border-b border-gray-100">
+                    <p className="text-sm font-medium text-gray-900 truncate">{user.email}</p>
+                  </div>
                   <Link to="/account" className="block px-4 py-2.5 hover:bg-gray-50 text-text-primary hover:text-primary transition-colors">
                     My Account
                   </Link>
@@ -77,12 +80,18 @@ export function Header() {
                   </Link>
                   <button
                     onClick={signOut}
-                    className="block w-full text-left px-4 py-2.5 hover:bg-gray-50 text-red-600 hover:text-red-700 transition-colors"
+                    className="block w-full text-left px-4 py-2.5 hover:bg-gray-50 text-red-600 hover:text-red-700 transition-colors border-t border-gray-100"
                   >
                     Sign Out
                   </button>
                 </div>
               </div>
+            ) : (
+              <Link to="/login">
+                <button className="px-6 py-2.5 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                  Login
+                </button>
+              </Link>
             )}
           </div>
 
@@ -166,8 +175,16 @@ export function Header() {
                 Our Services
               </Link>
 
-              {user && (
+              {user ? (
                 <>
+                  <div className="py-2 px-2 border-t border-gray-200 mt-2">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-full bg-primary text-white font-semibold flex items-center justify-center">
+                        {user.email?.substring(0, 2).toUpperCase() || 'U'}
+                      </div>
+                      <p className="text-sm font-medium text-gray-900 truncate flex-1">{user.email}</p>
+                    </div>
+                  </div>
                   <Link
                     to="/account"
                     className="text-text-primary hover:text-primary font-semibold py-2 px-2 rounded hover:bg-gray-50 transition-colors"
@@ -175,13 +192,42 @@ export function Header() {
                   >
                     My Account
                   </Link>
+                  <Link
+                    to="/account/pets"
+                    className="text-text-primary hover:text-primary font-semibold py-2 px-2 rounded hover:bg-gray-50 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    My Pets
+                  </Link>
+                  <Link
+                    to="/account/appointments"
+                    className="text-text-primary hover:text-primary font-semibold py-2 px-2 rounded hover:bg-gray-50 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Appointments
+                  </Link>
+                  <Link
+                    to="/account/orders"
+                    className="text-text-primary hover:text-primary font-semibold py-2 px-2 rounded hover:bg-gray-50 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Orders
+                  </Link>
                   <button
                     onClick={() => { signOut(); setIsMenuOpen(false); }}
-                    className="text-left text-red-600 hover:text-red-700 font-semibold py-2 px-2 rounded hover:bg-gray-50 transition-colors"
+                    className="text-left text-red-600 hover:text-red-700 font-semibold py-2 px-2 rounded hover:bg-gray-50 transition-colors w-full border-t border-gray-200 mt-2 pt-3"
                   >
                     Sign Out
                   </button>
                 </>
+              ) : (
+                <Link
+                  to="/login"
+                  className="text-primary hover:text-blue-700 font-semibold py-2 px-2 rounded hover:bg-blue-50 transition-colors border-t border-gray-200 mt-2 pt-3"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Login
+                </Link>
               )}
             </nav>
           </div>
