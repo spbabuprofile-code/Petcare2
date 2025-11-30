@@ -18,10 +18,10 @@ export function GroomingPage() {
               </Button>
             </Link>
 
-            <div className="grid grid-cols-3 gap-8 mt-12 max-w-2xl">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-12 max-w-2xl">
               <div className="text-center">
                 <div className="text-4xl mb-2">📋</div>
-                <div className="text-2xl font-bold text-gray-900">2,00,000+</div>
+                <div className="text-xl sm:text-2xl font-bold text-gray-900">2,00,000+</div>
                 <div className="text-sm text-gray-600">Groomings Completed</div>
               </div>
               <div className="text-center">

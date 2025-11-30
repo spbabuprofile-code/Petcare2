@@ -87,8 +87,8 @@ export function ShopPage() {
 
             <div className="grid lg:grid-cols-4 gap-8">
               <div className="lg:col-span-1">
-                <div className="bg-white rounded-xl shadow-sm p-6 sticky top-4">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Filter Products</h3>
+                <div className="bg-white rounded-xl shadow-sm p-4 sm:p-6 lg:sticky lg:top-4">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-4 text-gray-900">Filter Products</h3>
 
                   <div className="mb-6">
                     <h4 className="font-medium mb-3 text-gray-900">Pet Type</h4>
