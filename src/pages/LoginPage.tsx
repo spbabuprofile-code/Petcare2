@@ -39,7 +39,9 @@ export function LoginPage() {
           }]);
         }
 
-        navigate(searchParams.get('redirect') || '/account');
+        const redirectPath = sessionStorage.getItem('redirectAfterLogin') || searchParams.get('redirect') || '/account';
+        sessionStorage.removeItem('redirectAfterLogin');
+        navigate(redirectPath);
       } else {
         const { error: signInError } = await supabase.auth.signInWithPassword({
           email,
@@ -48,7 +50,9 @@ export function LoginPage() {
 
         if (signInError) throw signInError;
 
-        navigate(searchParams.get('redirect') || '/account');
+        const redirectPath = sessionStorage.getItem('redirectAfterLogin') || searchParams.get('redirect') || '/account';
+        sessionStorage.removeItem('redirectAfterLogin');
+        navigate(redirectPath);
       }
     } catch (err: any) {
       setError(err.message || 'An error occurred');

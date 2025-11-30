@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ShoppingCart } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
+import { useCart } from '../../contexts/CartContext';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, signOut } = useAuth();
+  const { totalItems } = useCart();
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-40">
@@ -46,6 +49,14 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
+            <Link to="/cart" className="relative p-2 hover:bg-gray-100 rounded-lg transition-colors">
+              <ShoppingCart className="w-6 h-6 text-text-primary" />
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
+            </Link>
             {user && (
               <div className="relative group">
                 <button className="px-6 py-2.5 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-blue-50 transition-colors">
@@ -75,18 +86,28 @@ export function Header() {
             )}
           </div>
 
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          <div className="lg:hidden flex items-center space-x-2">
+            <Link to="/cart" className="relative p-2 hover:bg-gray-100 rounded-lg transition-colors">
+              <ShoppingCart className="w-6 h-6 text-text-primary" />
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  {totalItems}
+                </span>
               )}
-            </svg>
-          </button>
+            </Link>
+            <button
+              className="p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {isMenuOpen && (

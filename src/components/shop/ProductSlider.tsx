@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useAuth } from '../../contexts/AuthContext';
+import { useCart } from '../../contexts/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -62,6 +65,29 @@ const topProducts: Product[] = [
 export function ProductSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const { user } = useAuth();
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleOrderNow = (product: Product) => {
+    if (!user) {
+      sessionStorage.setItem('redirectAfterLogin', '/shop');
+      navigate('/login');
+      return;
+    }
+
+    addToCart({
+      product_id: `product_${product.id}`,
+      name: product.name,
+      brand: product.brand,
+      price: product.price,
+      quantity: 1,
+      image: product.image,
+      weight: product.weight
+    });
+
+    navigate('/cart');
+  };
 
   useEffect(() => {
     if (!isPaused) {
@@ -176,7 +202,10 @@ export function ProductSlider() {
                           )}
                         </div>
 
-                        <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 rounded-xl transition-colors shadow-md">
+                        <button
+                          onClick={() => handleOrderNow(product)}
+                          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 rounded-xl transition-colors shadow-md"
+                        >
                           Order Now
                         </button>
                       </div>

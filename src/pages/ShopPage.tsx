@@ -1,11 +1,54 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { Button } from '../components/common/Button';
 import { BrandCarousel } from '../components/shop/BrandCarousel';
 import { CategoryGrid } from '../components/shop/CategoryGrid';
 import { SignatureServices } from '../components/shop/SignatureServices';
 import { ProductSlider } from '../components/shop/ProductSlider';
+import { ProductSelectorModal } from '../components/shop/ProductSelectorModal';
+
+const topProducts = [
+  {
+    id: 1,
+    name: "Purina ONE +Plus Vibrant Maturity Adult 7+ Formula",
+    brand: "PURINA",
+    image: "/4 copy copy copy.jpeg",
+    price: 6886,
+    weight: "16.5 lbs (approx. 7.5 kg)"
+  },
+  {
+    id: 2,
+    name: "Pedigree Puppy Dry Dog Food – Meat & Milk",
+    brand: "PEDIGREE",
+    image: "/3 copy copy copy.jpeg",
+    price: 3605,
+    weight: "20 kg"
+  },
+  {
+    id: 3,
+    name: "Meat Up 100% Vegetarian Adult Dry Dog Food",
+    brand: "MEAT UP",
+    image: "/2 copy copy copy.jpeg",
+    price: 718,
+    weight: "3 kg"
+  },
+  {
+    id: 4,
+    name: "Kennel Kitchen Chicken Chunks in Gravy Wet Dog Food",
+    brand: "KENNEL KITCHEN",
+    image: "/1 copy copy.jpeg",
+    price: 45,
+    weight: "100 g"
+  },
+  {
+    id: 5,
+    name: "IAMS Proactive Health Small Breed Chicken & Whole Grain Recipe dry dog food.",
+    brand: "IAMS",
+    image: "/5.jpeg",
+    price: 2204,
+    weight: "3.18 Kg"
+  }
+];
 
 export function ShopPage() {
   const [products, setProducts] = useState<any[]>([]);
@@ -13,6 +56,7 @@ export function ShopPage() {
   const [petTypeFilter, setPetTypeFilter] = useState('all');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [showFilters, setShowFilters] = useState(false);
+  const [showProductModal, setShowProductModal] = useState(false);
 
   useEffect(() => {
     loadProducts();
@@ -59,11 +103,13 @@ export function ShopPage() {
             <br />
             <span className="text-gray-900">Delivered in Just 2 Hours!</span>
           </h1>
-          <Link to="/book-appointment">
-            <Button variant="primary" className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors mt-4">
-              Order Now
-            </Button>
-          </Link>
+          <Button
+            variant="primary"
+            onClick={() => setShowProductModal(true)}
+            className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors mt-4"
+          >
+            Order Now
+          </Button>
         </div>
       </div>
 
@@ -212,13 +258,14 @@ export function ShopPage() {
           <p className="text-lg mb-6 max-w-3xl mx-auto">
             Discover the simplicity of our app with this cheeky walkthrough for a hassle-free pet care experience 🐾
           </p>
-          <Link to="/about">
-            <Button variant="secondary" className="bg-white text-primary px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold">
-              Learn More About Us
-            </Button>
-          </Link>
         </div>
       </div>
+
+      <ProductSelectorModal
+        isOpen={showProductModal}
+        onClose={() => setShowProductModal(false)}
+        products={topProducts}
+      />
     </div>
   );
 }
