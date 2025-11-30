@@ -170,7 +170,7 @@ export function BrandCarousel() {
                       }}
                     >
                       <div className="bg-white rounded-2xl shadow-md hover:shadow-xl p-8 h-56 flex flex-col items-center justify-center border border-gray-100 transition-all duration-300 hover:border-blue-200">
-                        <div className="h-32 w-full flex items-center justify-center mb-4">
+                        <div className="h-full w-full flex items-center justify-center">
                           <img
                             src={brand.logo}
                             alt={`${brand.name} logo`}
@@ -178,9 +178,6 @@ export function BrandCarousel() {
                             loading="lazy"
                           />
                         </div>
-                        <p className="text-base font-semibold text-gray-800 text-center">
-                          {brand.name}
-                        </p>
                       </div>
                     </div>
                   );
