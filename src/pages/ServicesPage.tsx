@@ -78,7 +78,7 @@ const services = [
     id: 6,
     title: 'Pet Grooming',
     description: 'From a routine trim to regular bathing - pampers healthcare for all pets. Trusted professional groomers and affordable spa therapy.',
-    image: '/8.jpg',
+    image: '/20.jpg',
     link: '/services/grooming',
     features: [
       'Full Grooming',
@@ -93,7 +93,7 @@ const services = [
     id: 7,
     title: 'Intensive Care',
     description: 'In critical care our ICU is monitoring for pets who need close observation. All the equipment required is available: trauma, fracture and vital diseases.',
-    image: '/9.jpg',
+    image: '/19.jpg',
     link: '/services/emergency',
     features: [
       'Emergency Care',
@@ -107,7 +107,7 @@ const services = [
     id: 8,
     title: 'Pet Supplies',
     description: 'International brands of pet food, pet cafe, toys, collars, dog bamboo and essential care items all in one place.',
-    image: '/10.jpg',
+    image: '/21.jpg',
     link: '/shop',
     features: [
       'Dog Food & Treats',
