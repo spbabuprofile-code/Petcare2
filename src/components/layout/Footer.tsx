@@ -72,12 +72,13 @@ export function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 V-Care Pet Polyclinic. All rights reserved.
+            © 2025 V-Care Pet Polyclinic. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-4 md:mt-0">
             <Link to="/terms" className="text-gray-400 hover:text-white text-sm">Terms & Conditions</Link>
+            <Link to="/supply-policy" className="text-gray-400 hover:text-white text-sm">Supply Policy</Link>
+            <Link to="/refund-cancellation-policy" className="text-gray-400 hover:text-white text-sm">Refund & Cancellation Policy</Link>
             <Link to="/privacy" className="text-gray-400 hover:text-white text-sm">Privacy Policy</Link>
-            <Link to="/refund-policy" className="text-gray-400 hover:text-white text-sm">Refund Policy</Link>
           </div>
         </div>
       </div>

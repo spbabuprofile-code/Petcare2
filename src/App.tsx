@@ -16,6 +16,10 @@ import { AccountDashboard } from './pages/account/AccountDashboard';
 import { ConsultationPage } from './pages/services/ConsultationPage';
 import { GroomingPage } from './pages/GroomingPage';
 import { ServicesPage } from './pages/ServicesPage';
+import { TermsPage } from './pages/TermsPage';
+import { SupplyPolicyPage } from './pages/SupplyPolicyPage';
+import { RefundCancellationPolicyPage } from './pages/RefundCancellationPolicyPage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 
 function App() {
   return (
@@ -47,9 +51,10 @@ function App() {
                 <Route path="/services/emergency" element={<ConsultationPage />} />
                 <Route path="/grooming" element={<GroomingPage />} />
                 <Route path="/wellness-plans" element={<AboutPage />} />
-                <Route path="/terms" element={<StaticPage title="Terms & Conditions" />} />
-                <Route path="/privacy" element={<StaticPage title="Privacy Policy" />} />
-                <Route path="/refund-policy" element={<StaticPage title="Refund Policy" />} />
+                <Route path="/terms" element={<TermsPage />} />
+                <Route path="/supply-policy" element={<SupplyPolicyPage />} />
+                <Route path="/refund-cancellation-policy" element={<RefundCancellationPolicyPage />} />
+                <Route path="/privacy" element={<PrivacyPolicyPage />} />
                 <Route path="/checkout" element={<CheckoutPlaceholder />} />
               </Routes>
             </main>
@@ -58,24 +63,6 @@ function App() {
         </CartProvider>
       </AuthProvider>
     </Router>
-  );
-}
-
-function StaticPage({ title }: { title: string }) {
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="bg-primary text-white py-12">
-        <div className="section-container">
-          <h1 className="text-4xl font-bold">{title}</h1>
-        </div>
-      </div>
-      <div className="section-container">
-        <div className="prose max-w-none">
-          <h2>Coming Soon</h2>
-          <p>This page is under construction. Please check back later.</p>
-        </div>
-      </div>
-    </div>
   );
 }
 
