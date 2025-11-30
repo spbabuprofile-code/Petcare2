@@ -10,12 +10,12 @@ const categories: Category[] = [
   {
     name: 'food',
     label: 'Dog Food',
-    image: '/1-use.jpeg',
+    image: '/6-use copy.jpeg',
   },
   {
     name: 'treats',
     label: 'Dog Treat',
-    image: '/6-use.jpeg',
+    image: '/1 copy.jpg',
   },
   {
     name: 'food',
@@ -35,7 +35,7 @@ const categories: Category[] = [
   {
     name: 'all',
     label: 'Super Deals Upto 50% Off',
-    image: 'https://images.pexels.com/photos/4587979/pexels-photo-4587979.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: '/5-use.jpeg',
   },
 ];
 
