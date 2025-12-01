@@ -183,14 +183,7 @@ export function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Children's Privacy</h2>
-            <p className="text-gray-700">
-              Our services are not directed to children under 18 years of age. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided personal information, please contact us immediately.
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Data Retention</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Data Retention</h2>
             <p className="text-gray-700 mb-4">
               We retain your information for as long as necessary to:
             </p>
@@ -206,14 +199,14 @@ export function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Third-Party Links</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Third-Party Links</h2>
             <p className="text-gray-700">
               Our website may contain links to third-party websites. We are not responsible for the privacy practices of these external sites. We encourage you to read their privacy policies before providing any personal information.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Marketing Communications</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Marketing Communications</h2>
             <p className="text-gray-700 mb-4">
               With your consent, we may send you:
             </p>
@@ -230,26 +223,18 @@ export function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">13. International Data Transfers</h2>
-            <p className="text-gray-700">
-              Your information is primarily stored and processed in India. If we transfer data internationally, we ensure appropriate safeguards are in place to protect your information in accordance with applicable data protection laws.
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">14. Changes to This Privacy Policy</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Changes to This Privacy Policy</h2>
             <p className="text-gray-700">
               We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of significant changes by posting the new policy on our website with an updated "Last Updated" date. Your continued use of our services after changes constitutes acceptance of the updated policy.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">15. Contact Us</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">13. Contact Us</h2>
             <p className="text-gray-700 mb-4">
               If you have questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact us:
             </p>
             <ul className="list-none text-gray-700 space-y-2">
-              <li><strong>Email:</strong> privacy@vcarepetpolyclinic.com</li>
               <li><strong>Phone:</strong> 08147 006345</li>
               <li><strong>Address:</strong> V-Care Pet Polyclinic, 65/1C, Sarjapur Road, Bangalore 560035</li>
             </ul>
@@ -259,7 +244,7 @@ export function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">16. Consent</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">14. Consent</h2>
             <p className="text-gray-700">
               By using our website and services, you acknowledge that you have read and understood this Privacy Policy and consent to the collection, use, and disclosure of your information as described herein.
             </p>
