@@ -3,7 +3,7 @@ export function SupplyPolicyPage() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-primary text-white py-12">
         <div className="section-container">
-          <h1 className="text-4xl font-bold mb-4">Supply Policy</h1>
+          <h1 className="text-4xl font-bold mb-4">Shipping Policy</h1>
           <p className="text-xl">Product supply, delivery, and fulfillment terms</p>
         </div>
       </div>

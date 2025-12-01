@@ -76,7 +76,7 @@ export function Footer() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-4 md:mt-0">
             <Link to="/terms" className="text-gray-400 hover:text-white text-sm">Terms & Conditions</Link>
-            <Link to="/supply-policy" className="text-gray-400 hover:text-white text-sm">Supply Policy</Link>
+            <Link to="/supply-policy" className="text-gray-400 hover:text-white text-sm">Shipping Policy</Link>
             <Link to="/refund-cancellation-policy" className="text-gray-400 hover:text-white text-sm">Refund & Cancellation Policy</Link>
             <Link to="/privacy" className="text-gray-400 hover:text-white text-sm">Privacy Policy</Link>
           </div>
