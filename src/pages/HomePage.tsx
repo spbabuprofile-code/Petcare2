@@ -85,7 +85,7 @@ export function HomePage() {
                   onClick={() => navigate('/book-appointment')}
                   className="bg-primary hover:bg-[#2F5FD1] text-white px-6 py-3.5 rounded-lg font-semibold text-base sm:text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
                 >
-                  Book Veterinary Appointment
+                  Book Appointment @ ₹599
                 </button>
                 <button
                   onClick={() => navigate('/shop')}
